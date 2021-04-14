@@ -1,0 +1,848 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!-- ===============================================-->
+<!--    Header Starts Here -->
+<!-- ===============================================-->
+
+<title>{% block title %} Update a Deal | Vancouvar {% endblock %}</title>
+<title>{% block description %} You can update a deal from here. {% endblock %}</title>
+
+{% include 'main/templates/header.html' %}
+
+<!-- ===============================================-->
+<!--    Header Ends Here -->
+<!-- ===============================================-->
+
+<!-- ===============================================-->
+<!--    Body Starts Here -->
+<!-- ===============================================-->
+
+<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled page-loading">
+    <div class="d-flex flex-column flex-root">
+        <div class="d-flex flex-row flex-column-fluid page">
+            <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+
+                <!-- ===============================================-->
+                <!--    Mainnav Starts Here -->
+                <!-- ===============================================-->
+
+                {% include 'deals/templates/mainnav.html' %}
+
+                <!-- ===============================================-->
+                <!--    Mainnav Ends Here -->
+                <!-- ===============================================-->
+
+                <!-- ===============================================-->
+                <!--    Subnav Starts Here -->
+                <!-- ===============================================-->
+
+                {% include 'main/templates/subnav.html' %}
+
+                <!-- ===============================================-->
+                <!--    Subnav Ends Here -->
+                <!-- ===============================================-->
+
+                <!-- ===============================================-->
+                <!--    Content Starts Here -->
+                <!-- ===============================================-->
+
+                <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+                    <!-- ===============================================-->
+                    <!--    Breadcrumbs Start Here -->
+                    <!-- ===============================================-->
+
+                    {% include 'deals/templates/breadcrumbs.html' %}
+
+                    <!-- ===============================================-->
+                    <!--    Breadcrumbs End Here -->
+                    <!-- ===============================================-->
+
+                    <!-- ===============================================-->
+                    <!--    Notice Starts Here -->
+                    <!-- ===============================================-->
+
+                    {% include 'main/templates/notice.html' %}
+
+                    <!-- ===============================================-->
+                    <!--    Notice Ends Here -->
+                    <!-- ===============================================-->
+
+                    <div class="d-flex flex-column-fluid">
+                        <div class="container">
+                            <div class="card card-custom">
+                                <div class="card-body p-0">
+                                    <div class="wizard wizard-5" id="kt_wizard" data-wizard-state="step-first" data-wizard-clickable="false">
+
+                                        <!-- ===============================================-->
+                                        <!--    Steps Start Here -->
+                                        <!-- ===============================================-->
+
+                                        <div class="w-lg-50 border-bottom border-bottom-lg-0 border-right-lg">
+                                            <div class="py-8 px-8 py-lg-20 px-lg-10">
+                                                <div class="wizard-steps">
+                                                    <div class="wizard-step" data-wizard-type="step" data-wizard-state="current">
+                                                        <div class="wizard-label">1</div>
+                                                    </div>
+                                                    <div class="wizard-step" data-wizard-type="step">
+                                                        <div class="wizard-label">2</div>
+                                                    </div>
+                                                    <div class="wizard-step" data-wizard-type="step">
+                                                        <div class="wizard-label">3</div>
+                                                    </div>
+                                                    <div class="wizard-step" data-wizard-type="step">
+                                                        <div class="wizard-label">4</div>
+                                                    </div>
+                                                    <div class="wizard-step" data-wizard-type="step">
+                                                        <div class="wizard-label">5</div>
+                                                    </div>
+                                                </div>
+                                                <div class="text-center py-10">
+                                                    <div data-wizard-type="step-info">
+                                                        <div class="mb-6"> <img src="{% static 'images/avatar/icons8-system-administrator-female-50.png' %}" alt="image" />
+                                                        </div>
+                                                        <h3 class="font-weight-bolder mb-5">Guide</h3>
+                                                        <p class="font-size-lg text-dark-50">
+                                                            Prior to updating a deal, learn how <br />founders & investors use Vancouvar.
+                                                        </p>
+                                                    </div>
+                                                    <div data-wizard-type="step-info">
+                                                        <div class="mb-6"> <img src="{% static 'images/avatar/icons8-verified-account-50.png' %}" alt="image" />
+                                                        </div>
+                                                        <h3 class="font-weight-bolder mb-5">Deal</h3>
+                                                        <p class="font-size-lg text-dark-50">
+                                                            Tell us about your deal type<br />and your preferred deal size.
+                                                        </p>
+                                                    </div>
+                                                    <div data-wizard-type="step-info">
+                                                        <div class="mb-6"> <img src="{% static 'images/avatar/icons8-purposeful-man-50.png' %}" alt="image" />
+                                                        </div>
+                                                        <h3 class="font-weight-bolder mb-5">Company</h3>
+                                                        <p class="font-size-lg text-dark-50">
+                                                            Tell us about your company, team, <br />product, stage, and location.
+                                                        </p>
+                                                    </div>
+                                                    <div data-wizard-type="step-info">
+                                                        <div class="mb-6"> <img src="{% static 'images/avatar/icons8-musician-female-50.png' %}" alt="image" />
+                                                        </div>
+                                                        <h3 class="font-weight-bolder mb-5">Market</h3>
+                                                        <p class="font-size-lg text-dark-50">
+                                                            Tell us about your users, churn, CAC,
+                                                            <br />customers, industry, and valuation.
+                                                        </p>
+                                                    </div>
+                                                    <div data-wizard-type="step-info">
+                                                        <div class="mb-6"> <img src="{% static 'images/avatar/icons8-see-female-account-50.png' %}" alt="image" />
+                                                        </div>
+                                                        <h3 class="font-weight-bolder mb-5">Financials</h3>
+                                                        <p class="font-size-lg text-dark-50">
+                                                            Tell us about your MRR, ARR, ARPU, <br />TAM, closed round, and seeking round.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- ===============================================-->
+                                        <!--    Steps End Here -->
+                                        <!-- ===============================================-->
+
+                                        <div class="w-lg-50">
+                                            <div class="py-8 px-8 pt-lg-30 pb-lg-20 px-lg-20">
+
+                                                <!-- ===============================================-->
+                                                <!--    Form Starts Here -->
+                                                <!-- ===============================================-->
+
+                                                <form class="form" id="kt_form">
+
+                                                    <!-- ===============================================-->
+                                                    <!--    Step 1 Starts Here -->
+                                                    <!-- ===============================================-->
+
+                                                    <div class="pb-5" data-wizard-type="step-content" data-wizard-state="current">
+                                                        <h4 class="mb-10 font-weight-bold text-dark">
+                                                            Now what?
+                                                        </h4>
+                                                        <h6 class="font-weight-bolder mb-3">
+                                                            I'm a founder, what's next?
+                                                        </h6>
+                                                        <div class="text-dark-50 line-height-lg">
+                                                            <div class="mb-2">
+                                                                <span>How cheaper is Vancouvar to crowdfunding?</span>
+                                                                <span class="label label-light-success label-inline font-weight-bolder label-lg ml-4">~20x</span>
+                                                                <br>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <span>How faster is Vancouvar to an email pitch?</span>
+                                                                <span class="label label-light-warning label-inline font-weight-bolder label-lg ml-4">~25x</span>
+                                                                <br>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <span>I'll receive an vIntro for every investor match, right?</span>
+                                                                <span class="label label-light-danger label-inline font-weight-bolder label-lg ml-4">YES</span>
+                                                                <br>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <span>Can I follow-up with an investor vIntro?</span>
+                                                                <span class="label label-light-info label-inline font-weight-bolder label-lg ml-4">NO</span>
+                                                                <br>
+                                                            </div>
+                                                            <div class="">
+                                                                <span>Can I reply to investors' follow-ups?</span>
+                                                                <span class="label label-light-warning label-inline font-weight-bolder label-lg ml-4">YES</span>
+                                                                <br>
+                                                            </div>
+                                                        </div>
+                                                        <div class="separator separator-dashed my-5"></div>
+                                                        <h6 class="font-weight-bolder mb-3">
+                                                            I'm an investor, what's next?
+                                                        </h6>
+                                                        <div class="text-dark-50 line-height-lg">
+                                                            <div class="mb-2">
+                                                                <span>How easier is Vancouvar to social networks?</span>
+                                                                <span class="label label-light-info label-inline font-weight-bolder label-lg ml-4">~16x</span>
+                                                                <br>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <span>I'll receive an vIntro for every founder match, correct?</span>
+                                                                <span class="label label-light-danger label-inline font-weight-bolder label-lg ml-4">YES</span>
+                                                                <br>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <span>Can I follow-up with a founder vIntro?</span>
+                                                                <span class="label label-light-success label-inline font-weight-bolder label-lg ml-4">SURE</span>
+                                                                <br>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <span>Will I get bombarded by vMessages from founders?</span>
+                                                                <span class="label label-light-warning label-inline font-weight-bolder label-lg ml-4">NO</span>
+                                                                <br>
+                                                            </div>
+                                                            <div class="">
+                                                                <span>How does Vancouvar solve this problem?</span>
+                                                                <span class="label label-light-info label-inline font-weight-bolder label-lg ml-4">ASYNCHRONOUS</span>
+                                                                <br>
+                                                            </div>
+                                                        </div>
+                                                        <div class="separator separator-dashed my-5"></div>
+                                                        <h6 class="font-weight-bolder mb-3">
+                                                            What's more?
+                                                        </h6>
+                                                        <div class="text-dark-50 line-height-lg">
+                                                            <div class="mb-2">
+                                                                <span>What are Vancouvar deals?</span>
+                                                                <span class="label label-light-info label-inline font-weight-bolder label-lg ml-4">ML MODELS</span>
+                                                                <br>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <span>Which countries is Vancouvar currently available?</span>
+                                                                <span class="label label-light-warning label-inline font-weight-bolder label-lg ml-4">U.S.</span>
+                                                                <br>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <span>Will Vancouvar be available in other countries?</span>
+                                                                <span class="label label-light-primary label-inline font-weight-bolder label-lg ml-4">YOU BET</span>
+                                                                <br>
+                                                            </div>
+                                                            <div class="mb-2">
+                                                                <span>How accurate are these ML models?</span>
+                                                                <span class="label label-light-danger label-inline font-weight-bolder label-lg ml-4">~85%</span>
+                                                                <br>
+                                                            </div>
+                                                            <div class="">
+                                                                <span>How can I contact Vancouvar?</span>
+                                                                <span class="label label-light-warning label-inline font-weight-bolder label-lg ml-4">EMAIL</span>
+                                                                <br>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- ===============================================-->
+                                                    <!--    Step 1 Ends Here -->
+                                                    <!-- ===============================================-->
+
+                                                    <!-- ===============================================-->
+                                                    <!--    Step 2 Starts Here -->
+                                                    <!-- ===============================================-->
+
+                                                    <div class="pb-5" data-wizard-type="step-content">
+                                                        <h4 class="mb-10 font-weight-bold text-dark">
+                                                            Deal Brief
+                                                        </h4>
+                                                        <div class="row">
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Deal Type</label>
+                                                                    <select name="deal_type" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>Deal Type</option>
+                                                                        <option value="">Founder</option>
+                                                                        <option value="">Investor</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Deal Size</label>
+                                                                    <select name="deal_size" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>Deal Size</option>
+                                                                        <option value="">< $2 Million</option>
+                                                                        <option value="">> $4 Million</option>
+                                                                        <option value="">> $6 Million</option>
+                                                                        <option value="">> $8 Million</option>
+                                                                        <option value="">> $9 Million</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Deal Return</label>
+                                                                    <select name="deal_return" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>Deal Return</option>
+                                                                        <option value="">> 10%</option>
+                                                                        <option value="">> 15%</option>
+                                                                        <option value="">> 20%</option>
+                                                                        <option value="">> 25%</option>
+                                                                        <option value="">> 30%</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Deal Name</label>
+                                                                    <input type="text" class="form-control form-control-solid form-control-lg" kt_maxlength_1="" maxlength="30" name="deal_name" placeholder="Deal Name" value="" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xl-12">
+                                                                <div class="form-group">
+                                                                    <label>Deal Description</label>
+                                                                    <textarea class="form-control form-control-solid form-control-lg" maxlength="80" rows="2"> </textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- ===============================================-->
+                                                    <!--    Step 2 Ends Here -->
+                                                    <!-- ===============================================-->
+
+                                                    <!-- ===============================================-->
+                                                    <!--    Step 3 Starts Here -->
+                                                    <!-- ===============================================-->
+
+                                                    <div class="pb-5" data-wizard-type="step-content">
+                                                        <h4 class="mb-10 font-weight-bold text-dark">
+                                                            Company Information
+                                                        </h4>
+                                                        <div class="row">
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Company Name</label>
+                                                                    <input type="text" class="form-control form-control-solid form-control-lg" name="company_name" placeholder="Company Name" value="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Competitive Advantage</label>
+                                                                    <select name="competitive_advantage" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>Competitive Advantage
+                                                                        </option>
+                                                                        <option value="">Cheaper & Easier</option>
+                                                                        <option value="">Cheaper & Faster</option>
+                                                                        <option value="">Cheaper & Safer</option>
+                                                                        <option value="">Easier & Faster</option>
+                                                                        <option value="">Easier & Safer</option>
+                                                                        <option value="">Safer & Faster</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Current Stage</label>
+                                                                    <select name="current_stage" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>Current Stage</option>
+                                                                        <option value="">Bootstrapping</option>
+                                                                        <option value="">Seed</option>
+                                                                        <option value="">Series A</option>
+                                                                        <option value="">Series B</option>
+                                                                        <option value="">Series C</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Founder Count</label>
+                                                                    <select name="founder count" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>
+                                                                            Founder Count
+                                                                        </option>
+                                                                        <option value="">
+                                                                            < 2</option>
+                                                                        <option value="">
+                                                                            < 4</option>
+                                                                        <option value="">
+                                                                            < 6</option>
+                                                                        <option value="">
+                                                                            < 8</option>
+                                                                        <option value="">
+                                                                            < 9</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Current City</label>
+                                                                    <input type="text" class="form-control form-control-solid form-control-lg" name="current_city" placeholder="Current City * U.S." value="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Current State</label>
+                                                                    <select name="current_state" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>Current State</option>
+                                                                        <option value="AL">Alabama</option>
+                                                                        <option value="AK">Alaska</option>
+                                                                        <option value="AZ">Arizona</option>
+                                                                        <option value="AR">Arkansas</option>
+                                                                        <option value="CA">California</option>
+                                                                        <option value="CO">Colorado</option>
+                                                                        <option value="CT">Connecticut</option>
+                                                                        <option value="DE">Delaware</option>
+                                                                        <option value="DC">District Of Columbia</option>
+                                                                        <option value="FL">Florida</option>
+                                                                        <option value="GA">Georgia</option>
+                                                                        <option value="HI">Hawaii</option>
+                                                                        <option value="ID">Idaho</option>
+                                                                        <option value="IL">Illinois</option>
+                                                                        <option value="IN">Indiana</option>
+                                                                        <option value="IA">Iowa</option>
+                                                                        <option value="KS">Kansas</option>
+                                                                        <option value="KY">Kentucky</option>
+                                                                        <option value="LA">Louisiana</option>
+                                                                        <option value="ME">Maine</option>
+                                                                        <option value="MD">Maryland</option>
+                                                                        <option value="MA">Massachusetts</option>
+                                                                        <option value="MI">Michigan</option>
+                                                                        <option value="MN">Minnesota</option>
+                                                                        <option value="MS">Mississippi</option>
+                                                                        <option value="MO">Missouri</option>
+                                                                        <option value="MT">Montana</option>
+                                                                        <option value="NE">Nebraska</option>
+                                                                        <option value="NV">Nevada</option>
+                                                                        <option value="NH">New Hampshire</option>
+                                                                        <option value="NJ">New Jersey</option>
+                                                                        <option value="NM">New Mexico</option>
+                                                                        <option value="NY">New York</option>
+                                                                        <option value="NC">North Carolina</option>
+                                                                        <option value="ND">North Dakota</option>
+                                                                        <option value="OH">Ohio</option>
+                                                                        <option value="OK">Oklahoma</option>
+                                                                        <option value="OR">Oregon</option>
+                                                                        <option value="PA">Pennsylvania</option>
+                                                                        <option value="RI">Rhode Island</option>
+                                                                        <option value="SC">South Carolina</option>
+                                                                        <option value="SD">South Dakota</option>
+                                                                        <option value="TN">Tennessee</option>
+                                                                        <option value="TX">Texas</option>
+                                                                        <option value="UT">Utah</option>
+                                                                        <option value="VT">Vermont</option>
+                                                                        <option value="VA">Virginia</option>
+                                                                        <option value="WA">Washington</option>
+                                                                        <option value="WV">West Virginia</option>
+                                                                        <option value="WI">Wisconsin</option>
+                                                                        <option value="WY">Wyoming</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- ===============================================-->
+                                                    <!--    Step 3 Ends Here -->
+                                                    <!-- ===============================================-->
+
+                                                    <!-- ===============================================-->
+                                                    <!--    Step 4 Starts Here -->
+                                                    <!-- ===============================================-->
+
+                                                    <div class="pb-5" data-wizard-type="step-content">
+                                                        <h4 class="mb-10 font-weight-bold text-dark">
+                                                            Market Overview
+                                                        </h4>
+                                                        <div class="row">
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>User Type</label>
+                                                                    <select name="user_type" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>User Type</option>
+                                                                        <option value="">B2B</option>
+                                                                        <option value="">B2C</option>
+                                                                        <option value="">B2G</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Current Customers</label>
+                                                                    <select name="current_customers" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>
+                                                                            Current Customers
+                                                                        </option>
+                                                                        <option value="">
+                                                                            < 1,000</option>
+                                                                        <option value="">
+                                                                            < 3,000</option>
+                                                                        <option value="">
+                                                                            < 5,000</option>
+                                                                        <option value="">
+                                                                            < 7,000</option>
+                                                                        <option value="">
+                                                                            < 9,000</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Current CAC</label>
+                                                                    <select name="current_cac" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>Current CAC</option>
+                                                                        <option value="">> $0</option>
+                                                                        <option value="">> $3</option>
+                                                                        <option value="">> $5</option>
+                                                                        <option value="">> $7</option>
+                                                                        <option value="">> $9</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Churn Rate</label>
+                                                                    <select name="churn_rate" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>Churn Rate</option>
+                                                                        <option value="">
+                                                                            < 0%</option>
+                                                                        <option value="">
+                                                                            < 3%</option>
+                                                                        <option value="">
+                                                                            < 5%</option>
+                                                                        <option value="">
+                                                                            < 7%</option>
+                                                                        <option value="">
+                                                                            < 9%</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Business Industry</label>
+                                                                    <select name="business_industry" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>
+                                                                            Business Industry
+                                                                        </option>
+                                                                        <option value="">Agriculture</option>
+                                                                        <option value="">Automotive</option>
+                                                                        <option value="">Education</option>
+                                                                        <option value="">Finance</option>
+                                                                        <option value="">Hardware</option>
+                                                                        <option value="">Healthcare</option>
+                                                                        <option value="">Hospitality</option>
+                                                                        <option value="">Retail</option>
+                                                                        <option value="">Software</option>
+                                                                        <option value="">Other</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Current Valuation</label>
+                                                                    <select name="current_valuation" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>
+                                                                            Current Valuation
+                                                                        </option>
+                                                                        <option value="">> $0 Million</option>
+                                                                        <option value="">> $3 Million</option>
+                                                                        <option value="">> $5 Million</option>
+                                                                        <option value="">> $7 Million</option>
+                                                                        <option value="">> $9 Million</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- ===============================================-->
+                                                    <!--    Step 4 Ends Here -->
+                                                    <!-- ===============================================-->
+
+                                                    <!-- ===============================================-->
+                                                    <!--    Step 5 Starts Here -->
+                                                    <!-- ===============================================-->
+
+                                                    <div class="pb-5" data-wizard-type="step-content">
+                                                        <h4 class="mb-10 font-weight-bold text-dark">
+                                                            Financial Insights
+                                                        </h4>
+                                                        <div class="row">
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Monthly Revenue</label>
+                                                                    <select name="monthly_revenue" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>Monthly Revenue</option>
+                                                                        <option value="">> $00,000</option>
+                                                                        <option value="">> $30,000</option>
+                                                                        <option value="">> $50,000</option>
+                                                                        <option value="">> $70,000</option>
+                                                                        <option value="">> $90,000</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Magic Number</label>
+                                                                    <select name="magic_number" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>Magic Number</option>
+                                                                        <option value="">> ~0.5x</option>
+                                                                        <option value="">> ~1.0x</option>
+                                                                        <option value="">> ~1.5x</option>
+                                                                        <option value="">> ~2.0x</option>
+                                                                        <option value="">> ~2.5x</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Current ARPU</label>
+                                                                    <select name="current_arpu" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>Current ARPU</option>
+                                                                        <option value="">> $00</option>
+                                                                        <option value="">> $30</option>
+                                                                        <option value="">> $50</option>
+                                                                        <option value="">> $70</option>
+                                                                        <option value="">> $90</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Estimaed TAM</label>
+                                                                    <select name="estimated_tam" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>Estimaed TAM</option>
+                                                                        <option value="">> $00 Billion</option>
+                                                                        <option value="">< $20 Billion</option>
+                                                                        <option value="">< $25 Billion</option>
+                                                                        <option value="">< $30 Billion</option>
+                                                                        <option value="">< $35 Billion</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Raised Round</label>
+                                                                    <select name="raised_round" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>Raised Round</option>
+                                                                        <option value="">> $000,000</option>
+                                                                        <option value="">> $300,000</option>
+                                                                        <option value="">> $500,000</option>
+                                                                        <option value="">> $700,000</option>
+                                                                        <option value="">> $900,000</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xl-6">
+                                                                <div class="form-group">
+                                                                    <label>Current Round</label>
+                                                                    <select name="current_round" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>Current Round</option>
+                                                                        <option value="">> $0 Million</option>
+                                                                        <option value="">> $3 Million</option>
+                                                                        <option value="">> $5 Million</option>
+                                                                        <option value="">> $7 Million</option>
+                                                                        <option value="">> $9 Million</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- ===============================================-->
+                                                    <!--    Step 5 Ends Here -->
+                                                    <!-- ===============================================-->
+
+                                                    <!-- ===============================================-->
+                                                    <!--    Button Actions Start Here -->
+                                                    <!-- ===============================================-->
+
+                                                    <div class="d-flex justify-content-between border-top mt-5 pt-10">
+                                                        <div class="mr-2">
+                                                            <button type="button" id="prev-step" class="btn btn-light-primary font-weight-bolder px-10 py-4" data-wizard-type="action-prev">
+                                                                <span class="svg-icon svg-icon-md mr-3">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                        width="24px" height="24px" viewBox="0 0 24 24"
+                                                                        version="1.1">
+                                                                        <g stroke="none" stroke-width="1" fill="none"
+                                                                            fill-rule="evenodd">
+                                                                            <polygon points="0 0 24 0 24 24 0 24" />
+                                                                            <rect fill="#000000" opacity="0.3"
+                                                                                transform="translate(12.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-12.000000, -12.000000)"
+                                                                                x="11" y="5" width="2" height="14"
+                                                                                rx="1" />
+                                                                            <path
+                                                                                d="M3.7071045,15.7071045 C3.3165802,16.0976288 2.68341522,16.0976288 2.29289093,15.7071045 C1.90236664,15.3165802 1.90236664,14.6834152 2.29289093,14.2928909 L8.29289093,8.29289093 C8.67146987,7.914312 9.28105631,7.90106637 9.67572234,8.26284357 L15.6757223,13.7628436 C16.0828413,14.136036 16.1103443,14.7686034 15.7371519,15.1757223 C15.3639594,15.5828413 14.7313921,15.6103443 14.3242731,15.2371519 L9.03007346,10.3841355 L3.7071045,15.7071045 Z"
+                                                                                fill="#000000" fill-rule="nonzero"
+                                                                                transform="translate(9.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-9.000001, -11.999997)" />
+                                                                        </g>
+                                                                    </svg>
+                                                                </span>Back
+                                                            </button>
+                                                        </div>
+                                                        <div>
+                                                            <button type="button" class="btn btn-primary font-weight-bolder px-10 py-4" data-wizard-type="action-submit">
+                                                                Save
+                                                                <span class="svg-icon svg-icon-md ml-3">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                        width="24px" height="24px" viewBox="0 0 24 24"
+                                                                        version="1.1">
+                                                                        <g stroke="none" stroke-width="1" fill="none"
+                                                                            fill-rule="evenodd">
+                                                                            <polygon points="0 0 24 0 24 24 0 24" />
+                                                                            <path
+                                                                                d="M6.26193932,17.6476484 C5.90425297,18.0684559 5.27315905,18.1196257 4.85235158,17.7619393 C4.43154411,17.404253 4.38037434,16.773159 4.73806068,16.3523516 L13.2380607,6.35235158 C13.6013618,5.92493855 14.2451015,5.87991302 14.6643638,6.25259068 L19.1643638,10.2525907 C19.5771466,10.6195087 19.6143273,11.2515811 19.2474093,11.6643638 C18.8804913,12.0771466 18.2484189,12.1143273 17.8356362,11.7474093 L14.0997854,8.42665306 L6.26193932,17.6476484 Z"
+                                                                                fill="#000000" fill-rule="nonzero"
+                                                                                transform="translate(11.999995, 12.000002) rotate(-180.000000) translate(-11.999995, -12.000002)" />
+                                                                        </g>
+                                                                    </svg>
+                                                                </span>
+                                                            </button>
+                                                            <button type="button" id="next-step" class="btn btn-primary font-weight-bolder px-10 py-4" data-wizard-type="action-next">
+                                                                Next
+                                                                <span class="svg-icon svg-icon-md ml-3">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                        width="24px" height="24px" viewBox="0 0 24 24"
+                                                                        version="1.1">
+                                                                        <g stroke="none" stroke-width="1" fill="none"
+                                                                            fill-rule="evenodd">
+                                                                            <polygon points="0 0 24 0 24 24 0 24" />
+                                                                            <rect fill="#000000" opacity="0.3"
+                                                                                transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
+                                                                                x="11" y="5" width="2" height="14"
+                                                                                rx="1" />
+                                                                            <path
+                                                                                d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
+                                                                                fill="#000000" fill-rule="nonzero"
+                                                                                transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)" />
+                                                                        </g>
+                                                                    </svg>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- ===============================================-->
+                                                    <!--    Button Actions End Here -->
+                                                    <!-- ===============================================-->
+
+                                                </form>
+
+                                                <!-- ===============================================-->
+                                                <!--    Form Ends Here -->
+                                                <!-- ===============================================-->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===============================================-->
+                <!--    Content Ends Here -->
+                <!-- ===============================================-->
+
+                <!-- ===============================================-->
+                <!--    Footer Starts Here -->
+                <!-- ===============================================-->
+
+                {% include 'main/templates/footer.html' %}
+
+                <!-- ===============================================-->
+                <!--    Footer Ends Here -->
+                <!-- ===============================================-->
+            </div>
+        </div>
+    </div>
+
+       <!-- ===============================================-->
+    <!--    Panel Starts Here -->
+    <!-- ===============================================-->
+
+    {% include 'main/templates/panel.html' %}
+
+    <!-- ===============================================-->
+    <!--    Panel Ends Here -->
+    <!-- ===============================================-->
+    
+    <!-- ===============================================-->
+    <!--    vMessages Start Here -->
+    <!-- ===============================================-->
+
+    {% include 'main/templates/vmessages.html' %}
+
+    <!-- ===============================================-->
+    <!--    vMessages End Here -->
+    <!-- ===============================================-->
+
+    <!-- ===============================================-->
+    <!--    Floatbar Starts Here -->
+    <!-- ===============================================-->
+
+    {% include 'main/templates/floater.html' %}
+
+    <!-- ===============================================-->
+    <!--    Floatbar Ends Here -->
+    <!-- ===============================================-->
+
+    <!-- ===============================================-->
+    <!--    Script Starts Here -->
+    <!-- ===============================================-->
+
+    {% include 'main/templates/script.html' %}
+
+    <!-- ===============================================-->
+    <!--    Script Ends Here -->
+    <!-- ===============================================-->
+</body>
+
+<!-- ===============================================-->
+<!--    Body Ends Here -->
+<!-- ===============================================-->
+
+</html>

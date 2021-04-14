@@ -1,0 +1,94 @@
+{% load static %}
+
+<!-- ===============================================-->
+<!--    Mainnav Starts Here -->
+<!-- ===============================================-->
+
+<div id="kt_header" class="header header-fixed">
+    <div class="container">
+        <div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
+            <div id="kt_header_menu" class="header-menu header-menu-left header-menu-mobile header-menu-layout-default">
+                <ul class="menu-nav">
+                    <li class="menu-item" aria-haspopup="true">
+                        <a href="/" class="menu-link">
+                            <span class="menu-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="menu-item" aria-haspopup="true">
+                        <a href="{% url 'deals' %}" class="menu-link">
+                            <span class="menu-text">Deals</span>
+                        </a>
+                    </li>
+                    <li class="menu-item" aria-haspopup="true">
+                        <a href="{% url 'users' %}" class="menu-link">
+                            <span class="menu-text">Users</span>
+                        </a>
+                    </li>
+                    <li class="menu-item" aria-haspopup="true">
+                        <a href="{% url 'plans' %}" class="menu-link">
+                            <span class="menu-text">Plans</span>
+                            <span class="label label-info label-pill label-inline ml-4">LAUNCH PLANS</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="topbar">
+            <div class="topbar-item">
+                <a href="{% url 'dashboard' %}" class="btn btn-icon btn-hover-transparent-white btn-lg mr-1" id="kt_quick_panel_toggle">
+                    <span class="svg-icon svg-icon-xl">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+              height="24px" viewBox="0 0 24 24" version="1.1">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <rect x="0" y="0" width="24" height="24" />
+                <rect fill="#000000" x="4" y="4" width="7" height="7" rx="1.5" />
+                <path
+                  d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z"
+                  fill="#000000" opacity="0.3" />
+              </g>
+            </svg>
+          </span>
+                </a>
+            </div>
+            <div class="topbar-item mr-1">
+                <div class="btn btn-icon btn-hover-transparent-white btn-clean btn-lg" data-toggle="modal" data-target="#kt_chat_modal">
+                    <span class="svg-icon svg-icon-xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24" />
+                                <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M14.4862 18L12.7975 21.0566C12.5304 21.54 11.922 21.7153 11.4386 21.4483C11.2977 21.3704 11.1777 21.2597 11.0887 21.1255L9.01653 18H5C3.34315 18 2 16.6569 2 15V6C2 4.34315 3.34315 3 5 3H19C20.6569 3 22 4.34315 22 6V15C22 16.6569 20.6569 18 19 18H14.4862Z" fill="black" />
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 7H15C15.5523 7 16 7.44772 16 8C16 8.55228 15.5523 9 15 9H6C5.44772 9 5 8.55228 5 8C5 7.44772 5.44772 7 6 7ZM6 11H11C11.5523 11 12 11.4477 12 12C12 12.5523 11.5523 13 11 13H6C5.44772 13 5 12.5523 5 12C5 11.4477 5.44772 11 6 11Z" fill="black" />
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="topbar-item mr-3">
+                <a href="{% url 'deals' %}" class="btn btn-icon btn-hover-transparent-white w-auto d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
+                    <span class="svg-icon svg-icon-xl">
+            <svg
+              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
+              viewBox="0 0 24 24" version="1.1">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <rect x="0" y="0" width="24" height="24" />
+                <rect fill="#000000" opacity="0.3" x="13" y="4" width="3" height="16" rx="1.5" />
+                <rect fill="#000000" x="8" y="9" width="3" height="11" rx="1.5" />
+                <rect fill="#000000" x="18" y="11" width="3" height="9" rx="1.5" />
+                <rect fill="#000000" x="3" y="13" width="3" height="7" rx="1.5" />
+              </g>
+            </svg>
+          </span>
+                </a>
+            </div>
+            <div class="dropdown">
+                <div class="topbar-item" data-toggle="tooltip" data-offset="10px,0px">
+                    <a href="{% url 'deals_create' %}" class="btn btn-dropdown btn-fixed-height btn-primary font-weight-bolder font-size-sm px-6">Create a Deal</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===============================================-->
+<!--    Mainnav Ends Here -->
+<!-- ===============================================-->

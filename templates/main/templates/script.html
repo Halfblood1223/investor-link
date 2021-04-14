@@ -1,0 +1,110 @@
+{% load static %}
+
+<!-- ===============================================-->
+<!--    Script Starts Here -->
+<!-- ===============================================-->
+
+<script>
+  var HOST_URL = "/";
+</script>
+<script>
+  var KTAppSettings = {
+    breakpoints: { sm: 576, md: 768, lg: 992, xl: 1200, xxl: 1200 },
+    colors: {
+      theme: {
+        base: {
+          white: "#ffffff",
+          primary: "#0BB783",
+          secondary: "#E5EAEE",
+          success: "#1BC5BD",
+          info: "#8950FC",
+          warning: "#FFA800",
+          danger: "#F64E60",
+          light: "#F3F6F9",
+          dark: "#212121",
+        },
+        light: {
+          white: "#ffffff",
+          primary: "#D7F9EF",
+          secondary: "#ECF0F3",
+          success: "#C9F7F5",
+          info: "#EEE5FF",
+          warning: "#FFF4DE",
+          danger: "#FFE2E5",
+          light: "#F3F6F9",
+          dark: "#D6D6E0",
+        },
+        inverse: {
+          white: "#ffffff",
+          primary: "#ffffff",
+          secondary: "#212121",
+          success: "#ffffff",
+          info: "#ffffff",
+          warning: "#ffffff",
+          danger: "#ffffff",
+          light: "#464E5F",
+          dark: "#ffffff",
+        },
+      },
+      gray: {
+        "gray-100": "#F3F6F9",
+        "gray-200": "#ECF0F3",
+        "gray-300": "#E5EAEE",
+        "gray-400": "#D6D6E0",
+        "gray-500": "#B5B5C3",
+        "gray-600": "#80808F",
+        "gray-700": "#464E5F",
+        "gray-800": "#1B283F",
+        "gray-900": "#212121",
+      },
+    },
+    "font-family": "Poppins",
+  };
+</script>
+
+<script type="text/javascript">
+	if ('WebSocket' in window) {
+		(function() {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					head.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					head.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function(msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			console.log('Live reload enabled.');
+		})();
+	}
+	// ]]>
+</script>
+
+<script src="{% static '/js/plugins.bundle.js' %}"></script>
+<script src="{% static '/js/prismjs.bundle.js' %}"></script>
+<script src="{% static '/js/scripts.bundle.js' %}"></script>
+<script src="{% static '/js/wizard-2.js' %}"></script>
+<script src="{% static '/js/wizard-3.js' %}"></script>
+<script src="{% static '/js/wizard-5.js' %}"></script>
+<script src="{% static '/js/html-table.js' %}"></script>
+<script src="{% static '/js/html-table-a.js' %}"></script>
+<script src="{% static '/js/login.js' %}"></script>
+<script src="{% static '/js/uppy-bundle.js' %}"></script>
+<script src="{% static '/js/file-upload/uppy.js' %}"></script>
+<script src="{% static '/js/inbox.js' %}"></script>
+
+<!-- ===============================================-->
+<!--    Script Ends Here -->
+<!-- ===============================================-->

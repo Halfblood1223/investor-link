@@ -1,0 +1,116 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!-- ===============================================-->
+<!--    Header Starts Here -->
+<!-- ===============================================-->
+
+<title>{% block title %} Create a User | Vancouvar {% endblock %}</title>
+<title>{% block description %} You can create a user here. {% endblock %}</title>
+
+{% include 'main/templates/header.html' %}
+
+<!-- ===============================================-->
+<!--    Header Ends Here -->
+<!-- ===============================================-->
+
+<!-- ===============================================-->
+<!--    Body Starts Here -->
+<!-- ===============================================-->
+
+<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled page-loading">
+    <div class="d-flex flex-column flex-root">
+        <div class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white" id="kt_login">
+            <div class="login-content flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">
+                <!-- ===============================================-->
+                <!--    Content Starts Here -->
+                <!-- ===============================================-->
+
+                <div class="d-flex flex-column-fluid flex-center">
+
+                    <!-- ===============================================-->
+                    <!--    Form Starts Here -->
+                    <!-- ===============================================-->
+
+                    <div class="login-form login-signin">
+                        <form class="form" novalidate="novalidate" id="">
+                            <div class="pb-8 pt-lg-0 pt-0">
+                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">
+                                    Create a User
+                                </h3>
+                                <span class="text-muted font-weight-bold font-size-h6">- it only takes a few seconds -
+                  </span>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-solid h-auto p-6 rounded-lg font-size-h6" type="text" placeholder="First Name" name="firstname" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-solid h-auto p-6 rounded-lg font-size-h6" type="text" placeholder="Last Name" name="lastname" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <input class="form-control form-control-solid h-auto p-6 rounded-lg font-size-h6" type="email" placeholder="Email Address" name="email" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-0">
+                                <div class="col-xl-12">
+                                    <div class="form-group">
+                                        <select name="account_role" class="form-control form-control-solid h-auto p-6 rounded-lg font-size-h6">
+                          <option value="" disabled>
+                            Account Role
+                          </option>
+                          <option value="">Team Member</option>
+                          <option value="">Venture Partner</option>
+                      </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pb-lg-0 pb-5">
+                                <button type="button" id="" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 mr-3 btn-block">
+                    Invite
+                  </button>
+                            </div>
+                            <div class="pt-5">
+                                <span class="text-muted font-weight-bold font-size-h6">- users are sub-accounts of a main account.
+                </div>
+              </form>
+            </div>
+
+            <!-- ===============================================-->
+            <!--    Form Ends Here -->
+            <!-- ===============================================-->
+          </div>
+
+          <!-- ===============================================-->
+          <!--    Content Ends Here -->
+          <!-- ===============================================-->
+
+          <!-- ===============================================-->
+          <!--    Script Starts Here -->
+          <!-- ===============================================-->
+
+          {% include 'main/templates/script.html' %}
+
+          <!-- ===============================================-->
+          <!--    Script Ends Here -->
+          <!-- ===============================================-->
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!-- ===============================================-->
+  <!--    Body Ends Here -->
+  <!-- ===============================================-->
+</html>
