@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from pathlib import Path
-import django-heroku
-import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,7 +26,7 @@ SECRET_KEY = '9%zdm2qau++8%@b9=6!pegh(9&j)a&q61z1-kouo#5tfc6!v6^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -42,9 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'account',
-    'users',
     'plans',
-    'deals',
     'dashboard',
 ]
 
@@ -109,6 +105,34 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+AUTH_USER_MODEL = 'account.CustomUser'
+
+
+# Email Config
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'Vancouvar Team <support@vancouvar.com>'
+
+# Celery Config
+
+BROKER_URL = 'redis://localhost:6379'
+# CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
+# Stripe Config
+
+STRIPE_PUBLIC_KEY = "pk_test_51Imb9WDIUASXHMisO60xnl4nVjYg9kfxGK2BAIgZGZZrK2rzBO0FRMVIz1xVbClrog624qNMbrlH3lG5nGr4cbDa00QnLGr1GG"
+STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -131,4 +155,3 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-django_heroku.settings(locals())

@@ -40,7 +40,7 @@
                 <!--    Subnav Starts Here -->
                 <!-- ===============================================-->
 
-                {% include 'main/templates/subnav.html' %}
+                {% include 'main/templates/subnav.html' with user=user %}
 
                 <!-- ===============================================-->
                 <!--    Subnav Ends Here -->
@@ -55,7 +55,7 @@
                     <!--    Breadcrumbs Start Here -->
                     <!-- ===============================================-->
 
-                    {% include 'dashboard/templates/breadcrumbs.html' %}
+                    {% include 'dashboard/templates/breadcrumbs.html' with username=username %}
 
                     <!-- ===============================================-->
                     <!--    Breadcrumbs End Here -->
@@ -154,44 +154,71 @@
                                             <div class="carousel-inner pt-9">
                                                 <div class="carousel-item">
                                                     <div class="d-flex flex-column justify-content-between h-100">
+                                                      {% if user1_string %}
                                                         <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
-                                                            AirBnb
+                                                          No Deal Available
                                                         </h3>
                                                         <p class="text-dark-75 font-size-lg font-weight-normal pt-2 mb-0">
-                                                            A room finder platform where short-time travelers travel the world to have sex.
+                                                            Wait for more users
                                                         </p>
+                                                      {% else %}
+                                                        <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
+                                                          {{ user1.business_name }}
+                                                        </h3>
+                                                        <p class="text-dark-75 font-size-lg font-weight-normal pt-2 mb-0">
+                                                            {{ user1.target_market }}  {{user1.business_industry}}
+                                                        </p>
+                                                      {% endif %}
                                                     </div>
                                                 </div>
                                                 <div class="carousel-item">
                                                     <div class="d-flex flex-column justify-content-between h-100">
+                                                      {% if user2_string %}
                                                         <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
-                                                            Amazon
+                                                          No Deal Available
                                                         </h3>
                                                         <p class="text-dark-75 font-size-lg font-weight-normal pt-2 mb-0">
-                                                            A digital bank that lets small businesses get approved for loans without applying.
+                                                          Wait for more users
                                                         </p>
+                                                      {% else %}
+                                                        <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
+                                                          {{ user2.business_name }}
+                                                        </h3>
+                                                        <p class="text-dark-75 font-size-lg font-weight-normal pt-2 mb-0">
+                                                          {{ user2.target_market }}   {{ user2.business_industry }}
+                                                        </p>
+                                                      {% endif %}
                                                     </div>
                                                 </div>
                                                 <div class="carousel-item active">
                                                     <div class="d-flex flex-column justify-content-between h-100">
+                                                      {% if user3_string %}
                                                         <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
-                                                            Vancouvar
+                                                            No Deal Available
                                                         </h3>
                                                         <p class="text-dark-75 font-size-lg font-weight-normal pt-2 mb-0">
-                                                            An enterprise ML platform for startups and venture capital firms worldwide.
+                                                            Wait for more users
                                                         </p>
+                                                      {% else %}
+                                                      <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
+                                                        {{ user3.business_name }}
+                                                      </h3>
+                                                      <p class="text-dark-75 font-size-lg font-weight-normal pt-2 mb-0">
+                                                          {{ user3.target_market }}  {{ user2.business_industry }}
+                                                      </p>
+                                                      {% endif %}
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="card-footer border-0 d-flex align-items-center justify-content-between pt-0">
-                                        <span class="label label-lg label-light-primary label-inline font-size-sm font-weight-bolder py-5">2 DAYS AGO</span
+                                        <span class="label label-lg label-light-primary label-inline font-size-sm font-weight-bolder py-5">FOUNDERS' DEALS</span
                         >
                         <a
-                          href="{% url 'deals' %}"
+                          href="{% url 'account_update' %}"
                           class="btn btn-sm btn-primary font-weight-bolder px-6"
-                          >View All</a
+                          >UPDATE</a
                         >
                       </div>
                     </div>
@@ -286,32 +313,59 @@
                                 <div class="carousel-inner pt-9">
                                     <div class="carousel-item">
                                         <div class="d-flex flex-column justify-content-between h-100">
+                                          {% if localuser1_string %}
                                             <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
-                                                Slack
+                                                No Deal Available
                                             </h3>
                                             <p class="text-dark-75 font-size-lg font-weight-normal pt-2 mb-0">
-                                                A team communication platform that is faster, better, and easier than emails.
+                                                Wait for more users
                                             </p>
+                                          {% else %}
+                                            <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
+                                              {{ localuser1.business_name }}
+                                            </h3>
+                                            <p class="text-dark-75 font-size-lg font-weight-normal pt-2 mb-0">
+                                                {{localuser1.incorporated_state }} {{ localuser1.incorporated_country}}
+                                            </p>
+                                          {% endif %}
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <div class="d-flex flex-column justify-content-between h-100">
+                                          {% if localuser2_string %}
                                             <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
-                                                Stripe
+                                                No Deal Available
                                             </h3>
                                             <p class="text-dark-75 font-size-lg font-weight-normal pt-2 mb-0">
-                                                An easy-to-use online payment processing for internet businesses.
+                                                Wait for more users
                                             </p>
+                                          {% else %}
+                                            <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
+                                              {{ localuser2.business_name }}
+                                            </h3>
+                                            <p class="text-dark-75 font-size-lg font-weight-normal pt-2 mb-0">
+                                                {{localuser2.incorporated_state }} {{ localuser2.incorporated_country}}
+                                            </p>
+                                          {% endif %}
                                         </div>
                                     </div>
                                     <div class="carousel-item active">
                                         <div class="d-flex flex-column justify-content-between h-100">
-                                            <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
-                                                Uber
-                                            </h3>
-                                            <p class="text-dark-75 font-size-lg font-weight-normal pt-2 mb-0">
-                                                A ride-sharing platform that connects riders with drivers faster than taxis.
-                                            </p>
+                                          {% if localuser3_string %}
+                                          <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
+                                              No Deal Available
+                                          </h3>
+                                          <p class="text-dark-75 font-size-lg font-weight-normal pt-2 mb-0">
+                                              Wait for more users
+                                          </p>
+                                        {% else %}
+                                          <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
+                                            {{ localuser3.business_name }}
+                                          </h3>
+                                          <p class="text-dark-75 font-size-lg font-weight-normal pt-2 mb-0">
+                                              {{localuser3.incorporated_state }} {{ localuser3.incorporated_country}}
+                                          </p>
+                                        {% endif %}
                                         </div>
                                     </div>
                                 </div>
@@ -320,7 +374,7 @@
                         <div class="card-footer border-0 pt-0">
                             <div class="flex-grow-1">
                                 <div class="text-muted font-weight-bold font-size-lg pb-4">
-                                    ~ 70% Local
+                                    ~ 70% Relevancy Score
                                 </div>
                                 <div class="progress progress-xs bg-light-primary">
                                     <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="24" aria-valuemin="0" aria-valuemax="100"></div>
@@ -410,32 +464,59 @@
                             <div class="carousel-inner pt-9">
                                 <div class="carousel-item">
                                     <div class="flex-grow-1">
+                                      {% if industryuser1_string %}
                                         <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
-                                            Zenefits
+                                            No Deal Available
                                         </h3>
                                         <p class="text-primary font-size-h2 font-weight-bolder pt-3 mb-0">
-                                            ~ 1.5x Magic Number
+                                          Wait for more users
                                         </p>
+                                      {% else %}
+                                        <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
+                                          {{ industryuser1.business_name }}
+                                        </h3>
+                                        <p class="text-primary font-size-h2 font-weight-bolder pt-3 mb-0">
+                                          {{ industryuser1.magic_number }}
+                                        </p>
+                                      {% endif %}
                                     </div>
                                 </div>
                                 <div class="carousel-item">
                                     <div class="flex-grow-1">
+                                      {% if industryuser2_string %}
                                         <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
-                                            Lyft
+                                            No Deal Available
                                         </h3>
                                         <p class="text-primary font-size-h2 font-weight-bolder pt-3 mb-0">
-                                            ~ 2.5x Magic Number
+                                          Wait for more users
                                         </p>
+                                      {% else %}
+                                        <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
+                                          {{ industryuser2.business_name }}
+                                        </h3>
+                                        <p class="text-primary font-size-h2 font-weight-bolder pt-3 mb-0">
+                                          {{ industryuser2.magic_number }}
+                                        </p>
+                                      {% endif %}
                                     </div>
                                 </div>
                                 <div class="carousel-item active">
                                     <div class="flex-grow-1">
+                                      {% if industryuser3_string %}
                                         <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
-                                            GrubHub
+                                            No Deal Available
                                         </h3>
                                         <p class="text-primary font-size-h2 font-weight-bolder pt-3 mb-0">
-                                            ~ 2.0x Magic Number
+                                          Wait for more users
                                         </p>
+                                      {% else %}
+                                        <h3 class="font-size-h4 text-dark-75 text-hover-primary font-weight-bold cursor-pointer">
+                                          {{ industryuser3.business_name }}
+                                        </h3>
+                                        <p class="text-primary font-size-h2 font-weight-bolder pt-3 mb-0">
+                                          {{ industryuser3.magic_number }}
+                                        </p>
+                                      {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -445,9 +526,9 @@
                         <span class="text-muted font-size-lg font-weight-bold pr-2">Best Magic Numbers</span
                         >
                         <a
-                          href="{% url 'deals' %}"
+                          href="{% url 'account_update' %}"
                           class="btn btn-sm btn-primary font-weight-bolder px-6"
-                          >View All</a
+                          >UPDATE</a
                         >
                       </div>
                     </div>
@@ -461,1256 +542,7 @@
                 <!-- ===============================================-->
                 <!--    Slide Cards End Here -->
                 <!-- ===============================================-->
-
-                <!-- ===============================================-->
-                <!--    Deal Cards Start Here -->
-                <!-- ===============================================-->
-
-                <div class="row">
-
-                  <!-- ===============================================-->
-                  <!--    1st Deal Card Starts Here -->
-                  <!-- ===============================================-->
-
-                  <div class="col-xl-4">
-                    <div class="card card-custom card-stretch gutter-b">
-                      <div class="card-header border-0 pt-6">
-                        <h3 class="card-title align-items-start flex-column">
-                          <span
-                            class="card-label font-weight-bolder font-size-h4 text-dark-75"
-                            >> $5 Million</span
-                          >
-                          <span
-                            class="text-muted mt-3 font-weight-bold font-size-lg"
-                            >Aggregated Raised Rounds</span
-                          >
-                        </h3>
-
-                        <div class="card-toolbar">
-                          <div
-                            class="dropdown dropdown-inline"
-                            data-toggle="tooltip"
-                            title="Beta"
-                            data-placement="left"
-                          >
-                            <div
-                              class="btn btn-icon-primary btn-clean btn-hover-light-primary btn-sm btn-icon"
-                              data-toggle=""
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                            >
-                              <span class="svg-icon svg-icon-lg">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  width="24px"
-                                  height="24px"
-                                  viewBox="0 0 24 24"
-                                  version="1.1"
-                                >
-                                  <g stroke="none" stroke-width="1">
-                                    <rect
-                                      x="14"
-                                      y="9"
-                                      width="6"
-                                      height="6"
-                                      rx="3"
-                                      fill="black"
-                                    />
-                                    <rect
-                                      x="3"
-                                      y="9"
-                                      width="6"
-                                      height="6"
-                                      rx="3"
-                                      fill="black"
-                                      fill-opacity="0.7"
-                                    />
-                                  </g>
-                                </svg>
-                              </span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-body pt-5">
-
-            <div class="d-flex flex-wrap align-items-center pb-2">
-                <div class="symbol symbol-35 flex-shrink-0 mr-3">
-                    <img alt="Pic" src="{% static 'images/avatar/icons8-actor-50.png' %}" />
-                </div>
-                <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2">
-                    <a href="{% url 'dashboard' %}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">> Raised Round</a
-                            >
-                            <span class="text-muted font-weight-bold"
-                              >Company Name</span
-                            >
-                          </div>
-                          <a
-                            href="{% url 'dashboard' %}"
-                            class="btn btn-icon btn-light btn-sm"
-                          >
-                            <span class="svg-icon svg-icon-success">
-                              <span class="svg-icon svg-icon-md">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  width="24px"
-                                  height="24px"
-                                  viewBox="0 0 24 24"
-                                  version="1.1"
-                                >
-                                  <g
-                                    stroke="none"
-                                    stroke-width="1"
-                                    fill="none"
-                                    fill-rule="evenodd"
-                                  >
-                                    <polygon points="0 0 24 0 24 24 0 24" />
-                                    <rect
-                                      fill="#000000"
-                                      opacity="0.3"
-                                      transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
-                                      x="11"
-                                      y="5"
-                                      width="2"
-                                      height="14"
-                                      rx="1"
-                                    />
-                                    <path
-                                      d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                      fill="#000000"
-                                      fill-rule="nonzero"
-                                      transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"
-                                    />
-                                  </g>
-                                </svg>
-                              </span>
-                            </span>
-                          </a>
-                </div>
-
-                <div class="d-flex flex-wrap align-items-center pb-2">
-                    <div class="symbol symbol-35 flex-shrink-0 mr-3">
-                        <img alt="Pic" src="{% static 'images/avatar/icons8-lol-female-50.png' %}" />
-                    </div>
-                    <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2">
-                        <a href="{% url 'dashboard' %}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">> Raised Round</a
-                              >
-                              <span class="text-muted font-weight-bold"
-                                >Company Name</span
-                              >
-                            </div>
-                            <a
-                              href="{% url 'dashboard' %}"
-                              class="btn btn-icon btn-light btn-sm"
-                            >
-                              <span class="svg-icon svg-icon-success">
-                                <span class="svg-icon svg-icon-md">
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="24px"
-                                    height="24px"
-                                    viewBox="0 0 24 24"
-                                    version="1.1"
-                                  >
-                                    <g
-                                      stroke="none"
-                                      stroke-width="1"
-                                      fill="none"
-                                      fill-rule="evenodd"
-                                    >
-                                      <polygon points="0 0 24 0 24 24 0 24" />
-                                      <rect
-                                        fill="#000000"
-                                        opacity="0.3"
-                                        transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
-                                        x="11"
-                                        y="5"
-                                        width="2"
-                                        height="14"
-                                        rx="1"
-                                      />
-                                      <path
-                                        d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                        fill="#000000"
-                                        fill-rule="nonzero"
-                                        transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"
-                                      />
-                                    </g>
-                                  </svg>
-                                </span>
-                              </span>
-                            </a>
-                    </div>
-
-                    <div class="d-flex flex-wrap align-items-center pb-2">
-                        <div class="symbol symbol-35 flex-shrink-0 mr-3">
-                            <img alt="Pic" src="{% static 'images/avatar/icons8-happy-man-50.png' %}" />
-                        </div>
-                        <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2">
-                            <a href="{% url 'dashboard' %}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">> Raised Round</a
-                                  >
-                                  <span class="text-muted font-weight-bold"
-                                    >Company Name</span
-                                  >
-                                </div>
-                                <a
-                                  href="{% url 'dashboard' %}"
-                                  class="btn btn-icon btn-light btn-sm"
-                                >
-                                  <span class="svg-icon svg-icon-success">
-                                    <span class="svg-icon svg-icon-md">
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        width="24px"
-                                        height="24px"
-                                        viewBox="0 0 24 24"
-                                        version="1.1"
-                                      >
-                                        <g
-                                          stroke="none"
-                                          stroke-width="1"
-                                          fill="none"
-                                          fill-rule="evenodd"
-                                        >
-                                          <polygon points="0 0 24 0 24 24 0 24" />
-                                          <rect
-                                            fill="#000000"
-                                            opacity="0.3"
-                                            transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
-                                            x="11"
-                                            y="5"
-                                            width="2"
-                                            height="14"
-                                            rx="1"
-                                          />
-                                          <path
-                                            d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                            fill="#000000"
-                                            fill-rule="nonzero"
-                                            transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"
-                                          />
-                                        </g>
-                                      </svg>
-                                    </span>
-                                  </span>
-                                </a>
-                        </div>
-
-                        <div class="d-flex flex-wrap align-items-center pb-2">
-                            <div class="symbol symbol-35 flex-shrink-0 mr-3">
-                                <img alt="Pic" src="{% static 'images/avatar/icons8-send-message-female-50.png' %}" />
-                            </div>
-                            <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2">
-                                <a href="{% url 'dashboard' %}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">> Raised Round</a
-                                    >
-                                    <span class="text-muted font-weight-bold"
-                                      >Company Name</span
-                                    >
-                                  </div>
-                                  <a
-                                    href="{% url 'dashboard' %}"
-                                    class="btn btn-icon btn-light btn-sm"
-                                  >
-                                    <span class="svg-icon svg-icon-success">
-                                      <span class="svg-icon svg-icon-md">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          xmlns:xlink="http://www.w3.org/1999/xlink"
-                                          width="24px"
-                                          height="24px"
-                                          viewBox="0 0 24 24"
-                                          version="1.1"
-                                        >
-                                          <g
-                                            stroke="none"
-                                            stroke-width="1"
-                                            fill="none"
-                                            fill-rule="evenodd"
-                                          >
-                                            <polygon points="0 0 24 0 24 24 0 24" />
-                                            <rect
-                                              fill="#000000"
-                                              opacity="0.3"
-                                              transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
-                                              x="11"
-                                              y="5"
-                                              width="2"
-                                              height="14"
-                                              rx="1"
-                                            />
-                                            <path
-                                              d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                              fill="#000000"
-                                              fill-rule="nonzero"
-                                              transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"
-                                            />
-                                          </g>
-                                        </svg>
-                                      </span>
-                                    </span>
-                                  </a>
-                            </div>
-
-                            <div class="d-flex flex-wrap align-items-center pb-2">
-                                <div class="symbol symbol-35 flex-shrink-0 mr-3">
-                                    <img alt="Pic" src="{% static 'images/avatar/icons8-writer-female-50.png' %}" />
-                                </div>
-                                <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2">
-                                    <a href="{% url 'dashboard' %}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">> Raised Round</a
-                                      >
-                                      <span class="text-muted font-weight-bold"
-                                        >Company Name</span
-                                      >
-                                    </div>
-                                    <a
-                                      href="{% url 'dashboard' %}"
-                                      class="btn btn-icon btn-light btn-sm"
-                                    >
-                                      <span class="svg-icon svg-icon-success">
-                                        <span class="svg-icon svg-icon-md">
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            width="24px"
-                                            height="24px"
-                                            viewBox="0 0 24 24"
-                                            version="1.1"
-                                          >
-                                            <g
-                                              stroke="none"
-                                              stroke-width="1"
-                                              fill="none"
-                                              fill-rule="evenodd"
-                                            >
-                                              <polygon points="0 0 24 0 24 24 0 24" />
-                                              <rect
-                                                fill="#000000"
-                                                opacity="0.3"
-                                                transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
-                                                x="11"
-                                                y="5"
-                                                width="2"
-                                                height="14"
-                                                rx="1"
-                                              />
-                                              <path
-                                                d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                                fill="#000000"
-                                                fill-rule="nonzero"
-                                                transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"
-                                              />
-                                            </g>
-                                          </svg>
-                                        </span>
-                                      </span>
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ===============================================-->
-                    <!--    1st Deal Card Ends Here -->
-                    <!-- ===============================================-->
-
-                    <!-- ===============================================-->
-                    <!--    2nd Deal Card Starts Here -->
-                    <!-- ===============================================-->
-
-                    <div class="col-xl-4">
-                        <div class="card card-custom card-stretch gutter-b">
-                            <div class="card-header border-0 pt-6">
-                                <h3 class="card-title align-items-start flex-column">
-                                    <span class="card-label font-weight-bolder font-size-h4 text-dark-75">> $8 Million</span
-                          >
-                          <span
-                            class="text-muted mt-3 font-weight-bold font-size-lg"
-                            >Aggregated Current Rounds</span
-                          >
-                        </h3>
-
-                        <div class="card-toolbar">
-                          <div
-                            class="dropdown dropdown-inline"
-                            data-toggle="tooltip"
-                            title="Beta"
-                            data-placement="left"
-                          >
-                            <div
-                              class="btn btn-icon-primary btn-clean btn-hover-light-primary btn-sm btn-icon"
-                              data-toggle=""
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                            >
-                              <span class="svg-icon svg-icon-lg">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  width="24px"
-                                  height="24px"
-                                  viewBox="0 0 24 24"
-                                  version="1.1"
-                                >
-                                  <g stroke="none" stroke-width="1">
-                                    <rect
-                                      x="14"
-                                      y="9"
-                                      width="6"
-                                      height="6"
-                                      rx="3"
-                                      fill="black"
-                                    />
-                                    <rect
-                                      x="3"
-                                      y="9"
-                                      width="6"
-                                      height="6"
-                                      rx="3"
-                                      fill="black"
-                                      fill-opacity="0.7"
-                                    />
-                                  </g>
-                                </svg>
-                              </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card-body pt-5">
-
-                    <div class="d-flex flex-wrap align-items-center pb-2">
-                        <div class="symbol symbol-35 flex-shrink-0 mr-3">
-                            <img alt="Pic" src="{% static 'images/avatar/icons8-analytics-professional-female-50.png' %}" />
-                        </div>
-                        <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2">
-                            <a href="{% url 'dashboard' %}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">> Current Round</a
-                            >
-                            <span class="text-muted font-weight-bold"
-                              >Company Name</span
-                            >
-                          </div>
-                          <span
-                            class="text-success font-weight-bolder font-size-sm pr-6"
-                            >User Type</span
-                          >
-                          <a
-                            href="{% url 'dashboard' %}"
-                            class="btn btn-icon btn-light btn-sm"
-                          >
-                            <span class="svg-icon svg-icon-success">
-                              <span class="svg-icon svg-icon-md">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  width="24px"
-                                  height="24px"
-                                  viewBox="0 0 24 24"
-                                  version="1.1"
-                                >
-                                  <g
-                                    stroke="none"
-                                    stroke-width="1"
-                                    fill="none"
-                                    fill-rule="evenodd"
-                                  >
-                                    <polygon points="0 0 24 0 24 24 0 24" />
-                                    <rect
-                                      fill="#000000"
-                                      opacity="0.3"
-                                      transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
-                                      x="11"
-                                      y="5"
-                                      width="2"
-                                      height="14"
-                                      rx="1"
-                                    />
-                                    <path
-                                      d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                      fill="#000000"
-                                      fill-rule="nonzero"
-                                      transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"
-                                    />
-                                  </g>
-                                </svg>
-                              </span>
-                            </span>
-                          </a>
-                        </div>
-
-                        <div class="d-flex flex-wrap align-items-center pb-2">
-                            <div class="symbol symbol-35 flex-shrink-0 mr-3">
-                                <img alt="Pic" src="{% static 'images/avatar/icons8-unread-messages-female-50.png' %}" />
-                            </div>
-                            <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2">
-                                <a href="{% url 'dashboard' %}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">> Current Round</a
-                              >
-                              <span class="text-muted font-weight-bold"
-                                >Company Name</span
-                              >
-                            </div>
-                            <span
-                              class="text-success font-weight-bolder font-size-sm pr-6"
-                              >User Type</span
-                            >
-                            <a
-                              href="{% url 'dashboard' %}"
-                              class="btn btn-icon btn-light btn-sm"
-                            >
-                              <span class="svg-icon svg-icon-success">
-                                <span class="svg-icon svg-icon-md">
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="24px"
-                                    height="24px"
-                                    viewBox="0 0 24 24"
-                                    version="1.1"
-                                  >
-                                    <g
-                                      stroke="none"
-                                      stroke-width="1"
-                                      fill="none"
-                                      fill-rule="evenodd"
-                                    >
-                                      <polygon points="0 0 24 0 24 24 0 24" />
-                                      <rect
-                                        fill="#000000"
-                                        opacity="0.3"
-                                        transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
-                                        x="11"
-                                        y="5"
-                                        width="2"
-                                        height="14"
-                                        rx="1"
-                                      />
-                                      <path
-                                        d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                        fill="#000000"
-                                        fill-rule="nonzero"
-                                        transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"
-                                      />
-                                    </g>
-                                  </svg>
-                                </span>
-                              </span>
-                            </a>
-                            </div>
-
-                            <div class="d-flex flex-wrap align-items-center pb-2">
-                                <div class="symbol symbol-35 flex-shrink-0 mr-3">
-                                    <img alt="Pic" src="{% static 'images/avatar/icons8-system-administrator-male-50.png' %}" />
-                                </div>
-                                <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2">
-                                    <a href="{% url 'dashboard' %}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">> Current Round</a
-                                >
-                                <span class="text-muted font-weight-bold"
-                                  >Company Name</span
-                                >
-                              </div>
-                              <span
-                                class="text-success font-weight-bolder font-size-sm pr-6"
-                                >User Type</span
-                              >
-                              <a
-                                href="{% url 'dashboard' %}"
-                                class="btn btn-icon btn-light btn-sm"
-                              >
-                                <span class="svg-icon svg-icon-success">
-                                  <span class="svg-icon svg-icon-md">
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                                      width="24px"
-                                      height="24px"
-                                      viewBox="0 0 24 24"
-                                      version="1.1"
-                                    >
-                                      <g
-                                        stroke="none"
-                                        stroke-width="1"
-                                        fill="none"
-                                        fill-rule="evenodd"
-                                      >
-                                        <polygon points="0 0 24 0 24 24 0 24" />
-                                        <rect
-                                          fill="#000000"
-                                          opacity="0.3"
-                                          transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
-                                          x="11"
-                                          y="5"
-                                          width="2"
-                                          height="14"
-                                          rx="1"
-                                        />
-                                        <path
-                                          d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                          fill="#000000"
-                                          fill-rule="nonzero"
-                                          transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"
-                                        />
-                                      </g>
-                                    </svg>
-                                  </span>
-                                </span>
-                              </a>
-                                </div>
-
-                                <div class="d-flex flex-wrap align-items-center pb-2">
-                                    <div class="symbol symbol-35 flex-shrink-0 mr-3">
-                                        <img alt="Pic" src="{% static 'images/avatar/icons8-verified-account-50.png' %}" />
-                                    </div>
-                                    <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2">
-                                        <a href="{% url 'dashboard' %}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">> Current Round</a
-                                  >
-                                  <span class="text-muted font-weight-bold"
-                                    >Company Name</span
-                                  >
-                                </div>
-                                <span
-                                  class="text-success font-weight-bolder font-size-sm pr-6"
-                                  >User Type</span
-                                >
-                                <a
-                                  href="{% url 'dashboard' %}"
-                                  class="btn btn-icon btn-light btn-sm"
-                                >
-                                  <span class="svg-icon svg-icon-success">
-                                    <span class="svg-icon svg-icon-md">
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        width="24px"
-                                        height="24px"
-                                        viewBox="0 0 24 24"
-                                        version="1.1"
-                                      >
-                                        <g
-                                          stroke="none"
-                                          stroke-width="1"
-                                          fill="none"
-                                          fill-rule="evenodd"
-                                        >
-                                          <polygon points="0 0 24 0 24 24 0 24" />
-                                          <rect
-                                            fill="#000000"
-                                            opacity="0.3"
-                                            transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
-                                            x="11"
-                                            y="5"
-                                            width="2"
-                                            height="14"
-                                            rx="1"
-                                          />
-                                          <path
-                                            d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                            fill="#000000"
-                                            fill-rule="nonzero"
-                                            transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"
-                                          />
-                                        </g>
-                                      </svg>
-                                    </span>
-                                  </span>
-                                </a>
-                                    </div>
-
-                                    <div class="d-flex flex-wrap align-items-center pb-2">
-                                        <div class="symbol symbol-35 flex-shrink-0 mr-3">
-                                            <img alt="Pic" src="{% static 'images/avatar/icons8-active-female-50.png' %}" />
-                                        </div>
-                                        <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2">
-                                            <a href="{% url 'dashboard' %}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">> Current Round</a
-                                    >
-                                    <span class="text-muted font-weight-bold"
-                                      >Company Name</span
-                                    >
-                                  </div>
-                                  <span
-                                    class="text-success font-weight-bolder font-size-sm pr-6"
-                                    >User Type</span
-                                  >
-                                  <a
-                                    href="{% url 'dashboard' %}"
-                                    class="btn btn-icon btn-light btn-sm"
-                                  >
-                                    <span class="svg-icon svg-icon-success">
-                                      <span class="svg-icon svg-icon-md">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          xmlns:xlink="http://www.w3.org/1999/xlink"
-                                          width="24px"
-                                          height="24px"
-                                          viewBox="0 0 24 24"
-                                          version="1.1"
-                                        >
-                                          <g
-                                            stroke="none"
-                                            stroke-width="1"
-                                            fill="none"
-                                            fill-rule="evenodd"
-                                          >
-                                            <polygon points="0 0 24 0 24 24 0 24" />
-                                            <rect
-                                              fill="#000000"
-                                              opacity="0.3"
-                                              transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
-                                              x="11"
-                                              y="5"
-                                              width="2"
-                                              height="14"
-                                              rx="1"
-                                            />
-                                            <path
-                                              d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                              fill="#000000"
-                                              fill-rule="nonzero"
-                                              transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"
-                                            />
-                                          </g>
-                                        </svg>
-                                      </span>
-                                    </span>
-                                  </a>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- ===============================================-->
-                            <!--    2nd Deal Card Ends Here -->
-                            <!-- ===============================================-->
-
-                            <!-- ===============================================-->
-                            <!--    3rd Deal Card Starts Here -->
-                            <!-- ===============================================-->
-
-                            <div class="col-xl-4">
-                                <div class="card card-custom card-stretch gutter-b">
-                                    <div class="card-header border-0 pt-6">
-                                        <h3 class="card-title align-items-start flex-column">
-                                            <span class="card-label font-weight-bolder font-size-h4 text-dark-75">> $3 Million</span
-                          >
-                          <span
-                            class="text-muted mt-3 font-weight-bold font-size-lg"
-                            >Aggregated Monthly Revenue</span
-                          >
-                        </h3>
-
-                        <div class="card-toolbar">
-                          <div
-                            class="dropdown dropdown-inline"
-                            data-toggle="tooltip"
-                            title="Beta"
-                            data-placement="left"
-                          >
-                            <div
-                              class="btn btn-icon-primary btn-clean btn-hover-light-primary btn-sm btn-icon"
-                              data-toggle=""
-                              aria-haspopup="true"
-                              aria-expanded="false"
-                            >
-                              <span class="svg-icon svg-icon-lg">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  width="24px"
-                                  height="24px"
-                                  viewBox="0 0 24 24"
-                                  version="1.1"
-                                >
-                                  <g stroke="none" stroke-width="1">
-                                    <rect
-                                      x="14"
-                                      y="9"
-                                      width="6"
-                                      height="6"
-                                      rx="3"
-                                      fill="black"
-                                    />
-                                    <rect
-                                      x="3"
-                                      y="9"
-                                      width="6"
-                                      height="6"
-                                      rx="3"
-                                      fill="black"
-                                      fill-opacity="0.7"
-                                    />
-                                  </g>
-                                </svg>
-                              </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card-body pt-5">
-
-                            <div class="d-flex flex-wrap align-items-center pb-2">
-                                <div class="symbol symbol-35 flex-shrink-0 mr-3">
-                                    <img alt="Pic" src="{% static 'images/avatar/icons8-birthday-girl-50.png' %}" />
-                                </div>
-                                <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2">
-                                    <a href="{% url 'dashboard' %}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">> Monthly Revenue</a
-                            >
-                            <span class="text-muted font-weight-bold"
-                              >Company Name</span
-                            >
-                          </div>
-                          <a
-                            href="{% url 'dashboard' %}"
-                            class="btn btn-icon btn-light btn-sm"
-                          >
-                            <span class="svg-icon svg-icon-success">
-                              <span class="svg-icon svg-icon-md">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                                  width="24px"
-                                  height="24px"
-                                  viewBox="0 0 24 24"
-                                  version="1.1"
-                                >
-                                  <g
-                                    stroke="none"
-                                    stroke-width="1"
-                                    fill="none"
-                                    fill-rule="evenodd"
-                                  >
-                                    <polygon points="0 0 24 0 24 24 0 24" />
-                                    <rect
-                                      fill="#000000"
-                                      opacity="0.3"
-                                      transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
-                                      x="11"
-                                      y="5"
-                                      width="2"
-                                      height="14"
-                                      rx="1"
-                                    />
-                                    <path
-                                      d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                      fill="#000000"
-                                      fill-rule="nonzero"
-                                      transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"
-                                    />
-                                  </g>
-                                </svg>
-                              </span>
-                            </span>
-                          </a>
-                                </div>
-
-                                <div class="d-flex flex-wrap align-items-center pb-2">
-                                    <div class="symbol symbol-35 flex-shrink-0 mr-3">
-                                        <img alt="Pic" src="{% static 'images/avatar/icons8-bartender-female-50.png' %}" />
-                                    </div>
-                                    <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2">
-                                        <a href="{% url 'dashboard' %}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">> Monthly Revenue</a
-                              >
-                              <span class="text-muted font-weight-bold"
-                                >Company Name</span
-                              >
-                            </div>
-                            <a
-                              href="{% url 'dashboard' %}"
-                              class="btn btn-icon btn-light btn-sm"
-                            >
-                              <span class="svg-icon svg-icon-success">
-                                <span class="svg-icon svg-icon-md">
-                                  <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    width="24px"
-                                    height="24px"
-                                    viewBox="0 0 24 24"
-                                    version="1.1"
-                                  >
-                                    <g
-                                      stroke="none"
-                                      stroke-width="1"
-                                      fill="none"
-                                      fill-rule="evenodd"
-                                    >
-                                      <polygon points="0 0 24 0 24 24 0 24" />
-                                      <rect
-                                        fill="#000000"
-                                        opacity="0.3"
-                                        transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
-                                        x="11"
-                                        y="5"
-                                        width="2"
-                                        height="14"
-                                        rx="1"
-                                      />
-                                      <path
-                                        d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                        fill="#000000"
-                                        fill-rule="nonzero"
-                                        transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"
-                                      />
-                                    </g>
-                                  </svg>
-                                </span>
-                              </span>
-                            </a>
-                                    </div>
-
-                                    <div class="d-flex flex-wrap align-items-center pb-2">
-                                        <div class="symbol symbol-35 flex-shrink-0 mr-3">
-                                            <img alt="Pic" src="{% static 'images/avatar/icons8-move-up-female-50.png' %}" />
-                                        </div>
-                                        <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2">
-                                            <a href="{% url 'dashboard' %}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">> Monthly Revenue</a
-                                  >
-                                  <span class="text-muted font-weight-bold"
-                                    >Company Name</span
-                                  >
-                                </div>
-                                <a
-                                  href="{% url 'dashboard' %}"
-                                  class="btn btn-icon btn-light btn-sm"
-                                >
-                                  <span class="svg-icon svg-icon-success">
-                                    <span class="svg-icon svg-icon-md">
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                                        width="24px"
-                                        height="24px"
-                                        viewBox="0 0 24 24"
-                                        version="1.1"
-                                      >
-                                        <g
-                                          stroke="none"
-                                          stroke-width="1"
-                                          fill="none"
-                                          fill-rule="evenodd"
-                                        >
-                                          <polygon points="0 0 24 0 24 24 0 24" />
-                                          <rect
-                                            fill="#000000"
-                                            opacity="0.3"
-                                            transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
-                                            x="11"
-                                            y="5"
-                                            width="2"
-                                            height="14"
-                                            rx="1"
-                                          />
-                                          <path
-                                            d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                            fill="#000000"
-                                            fill-rule="nonzero"
-                                            transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"
-                                          />
-                                        </g>
-                                      </svg>
-                                    </span>
-                                  </span>
-                                </a>
-                                        </div>
-
-                                        <div class="d-flex flex-wrap align-items-center pb-2">
-                                            <div class="symbol symbol-35 flex-shrink-0 mr-3">
-                                                <img alt="Pic" src="{% static 'images/avatar/icons8-writer-female-50.png' %}" />
-                                            </div>
-                                            <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2">
-                                                <a href="{% url 'dashboard' %}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">> Monthly Revenue</a
-                                    >
-                                    <span class="text-muted font-weight-bold"
-                                      >Company Name</span
-                                    >
-                                  </div>
-                                  <a
-                                    href="{% url 'dashboard' %}"
-                                    class="btn btn-icon btn-light btn-sm"
-                                  >
-                                    <span class="svg-icon svg-icon-success">
-                                      <span class="svg-icon svg-icon-md">
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          xmlns:xlink="http://www.w3.org/1999/xlink"
-                                          width="24px"
-                                          height="24px"
-                                          viewBox="0 0 24 24"
-                                          version="1.1"
-                                        >
-                                          <g
-                                            stroke="none"
-                                            stroke-width="1"
-                                            fill="none"
-                                            fill-rule="evenodd"
-                                          >
-                                            <polygon points="0 0 24 0 24 24 0 24" />
-                                            <rect
-                                              fill="#000000"
-                                              opacity="0.3"
-                                              transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
-                                              x="11"
-                                              y="5"
-                                              width="2"
-                                              height="14"
-                                              rx="1"
-                                            />
-                                            <path
-                                              d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                              fill="#000000"
-                                              fill-rule="nonzero"
-                                              transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"
-                                            />
-                                          </g>
-                                        </svg>
-                                      </span>
-                                    </span>
-                                  </a>
-                                            </div>
-
-                                            <div class="d-flex flex-wrap align-items-center pb-2">
-                                                <div class="symbol symbol-35 flex-shrink-0 mr-3">
-                                                    <img alt="Pic" src="{% static 'images/avatar/icons8-delete-female-user-50.png' %}" />
-                                                </div>
-                                                <div class="d-flex flex-column flex-grow-1 my-lg-0 my-2 mr-2">
-                                                    <a href="{% url 'dashboard' %}" class="text-dark-75 font-weight-bolder text-hover-primary mb-1 font-size-lg">> Monthly Revenue</a
-                                      >
-                                      <span class="text-muted font-weight-bold"
-                                        >Company Name</span
-                                      >
-                                    </div>
-                                    <a
-                                      href="{% url 'dashboard' %}"
-                                      class="btn btn-icon btn-light btn-sm"
-                                    >
-                                      <span class="svg-icon svg-icon-success">
-                                        <span class="svg-icon svg-icon-md">
-                                          <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            xmlns:xlink="http://www.w3.org/1999/xlink"
-                                            width="24px"
-                                            height="24px"
-                                            viewBox="0 0 24 24"
-                                            version="1.1"
-                                          >
-                                            <g
-                                              stroke="none"
-                                              stroke-width="1"
-                                              fill="none"
-                                              fill-rule="evenodd"
-                                            >
-                                              <polygon points="0 0 24 0 24 24 0 24" />
-                                              <rect
-                                                fill="#000000"
-                                                opacity="0.3"
-                                                transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
-                                                x="11"
-                                                y="5"
-                                                width="2"
-                                                height="14"
-                                                rx="1"
-                                              />
-                                              <path
-                                                d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
-                                                fill="#000000"
-                                                fill-rule="nonzero"
-                                                transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)"
-                                              />
-                                            </g>
-                                          </svg>
-                                        </span>
-                                      </span>
-                                    </a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- ===============================================-->
-                                    <!--    3rd Deal Card Ends Here -->
-                                    <!-- ===============================================-->
-                                </div>
-
-                                <!-- ===============================================-->
-                                <!--    Deal Cards End Here -->
-                                <!-- ===============================================-->
-
-                                <!-- ===============================================-->
-                                <!--    User Cards Start Here -->
-                                <!-- ===============================================-->
-
-                                <div class="row">
-                                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                                        <div class="card card-custom gutter-b card-stretch">
-                                            <div class="card-body text-center py-20">
-                                                <div class="mt-0">
-                                                    <div class="symbol symbol-circle symbol-lg-50">
-                                                        <img src="{% static '/images/avatar/icons8-female-in-love-50.png' %}" alt="image" />
-                                                        <i class="symbol-badge symbol-badge-bottom bg-success"></i>
-                                                    </div>
-                                                    <div class="symbol symbol-lg-75 symbol-circle symbol-primary">
-                                                        <span class="font-size-h3 symbol-label font-weight-boldest d-none">JM</span
-            >
-          </div>
-        </div>
-        <div class="my-2">
-          <div
-            class="text-dark font-weight-bold text-hover-primary font-size-h4"
-          >
-            FName LName
-          </div>
-          <div class="text-muted mb-4">Account Role</div>
-        </div>
-        <div class="">
-          <span
-            class="label label-light-danger label-inline font-weight-bolder label-lg"
-            data-toggle="modal"
-            data-target="#kt_chat_modal"
-            >Contact</span
-          >
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-    <div class="card card-custom gutter-b card-stretch">
-      <div class="card-body text-center py-20">
-        <div class="mt-0">
-          <div class="symbol symbol-circle symbol-lg-50">
-            <img
-              src="{% static '/images/avatar/icons8-flag-person-female-50.png' %}"
-              alt="image"
-            />
-            <i
-              class="symbol-badge symbol-badge-bottom bg-success"
-            ></i>
-          </div>
-          <div
-            class="symbol symbol-lg-75 symbol-circle symbol-primary"
-          >
-            <span
-              class="font-size-h3 symbol-label font-weight-boldest d-none"
-              >JM</span
-            >
-          </div>
-        </div>
-        <div class="my-2">
-          <div
-            class="text-dark font-weight-bold text-hover-primary font-size-h4"
-          >
-            FName LName
-          </div>
-          <div class="text-muted mb-4">Account Role</div>
-        </div>
-        <div class="">
-          <span
-            class="label label-light-danger label-inline font-weight-bolder label-lg"
-            data-toggle="modal"
-            data-target="#kt_chat_modal"
-            >Contact</span
-          >
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-    <div class="card card-custom gutter-b card-stretch">
-      <div class="card-body text-center py-20">
-        <div class="mt-0">
-          <div class="symbol symbol-circle symbol-lg-50">
-            <img
-              src="{% static '/images/avatar/icons8-salary-male-50.png' %}"
-              alt="image"
-            />
-            <i
-              class="symbol-badge symbol-badge-bottom bg-success"
-            ></i>
-          </div>
-          <div
-            class="symbol symbol-lg-75 symbol-circle symbol-primary"
-          >
-            <span
-              class="font-size-h3 symbol-label font-weight-boldest d-none"
-              >JM</span
-            >
-          </div>
-        </div>
-        <div class="my-2">
-          <div
-            class="text-dark font-weight-bold text-hover-primary font-size-h4"
-          >
-            FName LName
-          </div>
-          <div class="text-muted mb-4">Account Role</div>
-        </div>
-        <div class="">
-          <span
-            class="label label-light-danger label-inline font-weight-bolder label-lg"
-            data-toggle="modal"
-            data-target="#kt_chat_modal"
-            >Contact</span
-          >
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-    <div class="card card-custom gutter-b card-stretch">
-      <div class="card-body text-center py-20">
-        <div class="mt-0">
-          <div class="symbol symbol-circle symbol-lg-50">
-            <img
-              src="{% static '/images/avatar/icons8-happy-man-50.png' %}"
-              alt="image"
-            />
-            <i
-              class="symbol-badge symbol-badge-bottom bg-success"
-            ></i>
-          </div>
-          <div
-            class="symbol symbol-lg-75 symbol-circle symbol-primary"
-          >
-            <span
-              class="font-size-h3 symbol-label font-weight-boldest d-none"
-              >JM</span
-            >
-          </div>
-        </div>
-        <div class="my-2">
-          <div
-            class="text-dark font-weight-bold text-hover-primary font-size-h4"
-          >
-            FName LName
-          </div>
-          <div class="text-muted mb-4">Account Role</div>
-        </div>
-        <div class="">
-          <span
-            class="label label-light-danger label-inline font-weight-bolder label-lg"
-            data-toggle="modal"
-            data-target="#kt_chat_modal"
-            >Contact</span
-          >
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-                <!-- ===============================================-->
-                <!--    User Cards End Here -->
-                <!-- ===============================================-->
-                
+                               
               </div>
             </div>
           </div>
@@ -1731,37 +563,7 @@
         </div>
       </div>
     </div>
-
-        <!-- ===============================================-->
-    <!--    Panel Starts Here -->
-    <!-- ===============================================-->
-
-    {% include 'main/templates/panel.html' %}
-
-    <!-- ===============================================-->
-    <!--    Panel Ends Here -->
-    <!-- ===============================================-->
-
-    <!-- ===============================================-->
-    <!--    vMessages Start Here -->
-    <!-- ===============================================-->
-
-    {% include 'main/templates/vmessages.html' %}
-
-    <!-- ===============================================-->
-    <!--    vMessages End Here -->
-    <!-- ===============================================-->
-
-    <!-- ===============================================-->
-    <!--    Floatbar Starts Here -->
-    <!-- ===============================================-->
-
-    {% include 'main/templates/floater.html' %}
-
-    <!-- ===============================================-->
-    <!--    Floatbar Ends Here -->
-    <!-- ===============================================-->
-
+    
     <!-- ===============================================-->
     <!--    Script Starts Here -->
     <!-- ===============================================-->

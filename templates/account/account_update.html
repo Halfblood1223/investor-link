@@ -1,0 +1,968 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!-- ===============================================-->
+<!--    Header Starts Here -->
+<!-- ===============================================-->
+
+<title>{% block title %} Update Your Account | Vancouvar {% endblock %}</title>
+<title>{% block description %} You can update your account from here. {% endblock %}</title>
+
+{% include 'main/templates/header.html' %}
+
+<!-- ===============================================-->
+<!--    Header Ends Here -->
+<!-- ===============================================-->
+
+<!-- ===============================================-->
+<!--    Body Starts Here -->
+<!-- ===============================================-->
+
+<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled page-loading">
+    <div class="d-flex flex-column flex-root">
+        <div class="d-flex flex-row flex-column-fluid page">
+
+            <!-- ===============================================-->
+            <!--    Content Starts Here -->
+            <!-- ===============================================-->
+
+            <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+
+                <div class="d-flex flex-column-fluid">
+                    <div class="container">
+                        <div class="card card-custom">
+                            <div class="card-body p-0">
+                                <div class="wizard wizard-5" id="kt_wizard" data-wizard-state="step-first" data-wizard-clickable="false">
+
+                                    <!-- ===============================================-->
+                                    <!--    Steps Start Here -->
+                                    <!-- ===============================================-->
+
+                                    <div class="w-lg-50 border-bottom border-bottom-lg-0 border-right-lg">
+                                        <div class="py-8 px-8 py-lg-20 px-lg-10">
+                                            <div class="wizard-steps">
+                                                <div class="wizard-step" data-wizard-type="step" data-wizard-state="current">
+                                                    <div class="wizard-label">1</div>
+                                                </div>
+                                                <div class="wizard-step" data-wizard-type="step">
+                                                    <div class="wizard-label">2</div>
+                                                </div>
+                                                <div class="wizard-step" data-wizard-type="step">
+                                                    <div class="wizard-label">3</div>
+                                                </div>
+                                                <div class="wizard-step" data-wizard-type="step">
+                                                    <div class="wizard-label">4</div>
+                                                </div>
+                                                <div class="wizard-step" data-wizard-type="step">
+                                                    <div class="wizard-label">5</div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center py-10">
+                                                <div data-wizard-type="step-info">
+                                                    <div class="mb-6"> <img src="{% static 'images/avatar/icons8-system-administrator-female-50.png' %}" alt="image" />
+                                                    </div>
+                                                    <h3 class="font-weight-bolder mb-5">Beginner Guide</h3>
+                                                    <p class="font-size-lg text-dark-50">
+                                                        Prior to updating your <br />account, learn why Vancouvar is <br />preferred by startup angels and founders.
+                                                    </p>
+                                                </div>
+                                                <div data-wizard-type="step-info">
+                                                    <div class="mb-6"> <img src="{% static 'images/avatar/icons8-verified-account-50.png' %}" alt="image" />
+                                                    </div>
+                                                    <h3 class="font-weight-bolder mb-5">Basic Information</h3>
+                                                    <p class="font-size-lg text-dark-50">
+                                                        Tell us about yourself, so we<br />can easily tell people about you.
+                                                    </p>
+                                                </div>
+                                                <div data-wizard-type="step-info">
+                                                    <div class="mb-6"> <img src="{% static 'images/avatar/icons8-purposeful-man-50.png' %}" alt="image" />
+                                                    </div>
+                                                    <h3 class="font-weight-bolder mb-5">Business Details</h3>
+                                                    <p class="font-size-lg text-dark-50">
+                                                        If you're an angel, tell us about <br />the company that might interet you, if you're <br />a founder, tell us about your company.
+                                                    </p>
+                                                </div>
+                                                <div data-wizard-type="step-info">
+                                                    <div class="mb-6"> <img src="{% static 'images/avatar/icons8-musician-female-50.png' %}" alt="image" />
+                                                    </div>
+                                                    <h3 class="font-weight-bolder mb-5">Market Overview</h3>
+                                                    <p class="font-size-lg text-dark-50">
+                                                        If you're an angel, tell us about <br />the market you're looking for, if you're <br />a founder, tell us about the market you're in.
+                                                    </p>
+                                                </div>
+                                                <div data-wizard-type="step-info">
+                                                    <div class="mb-6"> <img src="{% static 'images/avatar/icons8-see-female-account-50.png' %}" alt="image" />
+                                                    </div>
+                                                    <h3 class="font-weight-bolder mb-5">Financial Insights</h3>
+                                                    <p class="font-size-lg text-dark-50">
+                                                        If you're an angel, tell us about <br />the financial metrics you're looking for, if you're <br />a founder, tell us about your company's financials.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- ===============================================-->
+                                    <!--    Steps End Here -->
+                                    <!-- ===============================================-->
+
+                                    <div class="w-lg-50">
+                                        <div class="py-8 px-8 pt-lg-30 pb-lg-20 px-lg-20">
+
+                                            <!-- ===============================================-->
+                                            <!--    Form Starts Here -->
+                                            <!-- ===============================================-->
+
+                                            <form class="form" id="kt_form" method="POST">
+                                            {% csrf_token %}
+
+                                                <!-- ===============================================-->
+                                                <!--    Step 1 Starts Here -->
+                                                <!-- ===============================================-->
+
+                                                <div class="pb-5" data-wizard-type="step-content" data-wizard-state="current">
+                                                    <h4 class="mb-10 font-weight-bold text-dark">
+                                                        Beginner Guide
+                                                    </h4>
+                                                    <h6 class="font-weight-bolder mb-3">
+                                                        Why startup founders use Vancouvar.
+                                                    </h6>
+                                                    <div class="text-dark-50 line-height-lg">
+                                                        <div class="mb-2">
+                                                            <span>How cheaper is Vancouvar than crowdfunding?</span>
+                                                            <span class="label label-light-success label-inline font-weight-bolder label-lg ml-4">~80x</span>
+                                                            <br>
+                                                        </div>
+                                                        <div class="mb-2">
+                                                            <span>How easier is Vancouvar than cold emails?</span>
+                                                            <span class="label label-light-warning label-inline font-weight-bolder label-lg ml-4">~85x</span>
+                                                            <br>
+                                                        </div>
+                                                        <div class="mb-2">
+                                                            <span>How faster is Vancouvar than file sharing?</span>
+                                                            <span class="label label-light-info label-inline font-weight-bolder label-lg ml-4">~90x</span>
+                                                            <br>
+                                                        </div>
+                                                    </div>
+                                                    <div class="separator separator-dashed my-5"></div>
+                                                    <h6 class="font-weight-bolder mb-3">
+                                                        Why angel investors prefer Vancouvar?
+                                                    </h6>
+                                                    <div class="text-dark-50 line-height-lg">
+                                                        <div class="mb-2">
+                                                            <span>How cheaper is Vancouvar than pitch events?</span>
+                                                            <span class="label label-light-danger label-inline font-weight-bolder label-lg ml-4">~20x</span>
+                                                            <br>
+                                                        </div>
+                                                        <div class="mb-2">
+                                                            <span>How easier is Vancouvar than site forms?</span>
+                                                            <span class="label label-light-info label-inline font-weight-bolder label-lg ml-4">~120x</span>
+                                                            <br>
+                                                        </div>
+                                                        <div class="mb-2">
+                                                            <span>How faster is Vancouvar than form builders?</span>
+                                                            <span class="label label-light-primary label-inline font-weight-bolder label-lg ml-4">~180x</span>
+                                                            <br>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- ===============================================-->
+                                                <!--    Step 1 Ends Here -->
+                                                <!-- ===============================================-->
+
+                                                <!-- ===============================================-->
+                                                <!--    Step 2 Starts Here -->
+                                                <!-- ===============================================-->
+
+                                                <div class="pb-5" data-wizard-type="step-content">
+                                                    <h4 class="mb-10 font-weight-bold text-dark">
+                                                        Basic Information
+                                                    </h4>
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>First Name</label>
+                                                                <input type="text" class="form-control form-control-solid form-control-lg" name="first_name" placeholder="First Name" value="" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Last Name</label>
+                                                                <input type="text" class="form-control form-control-solid form-control-lg" name="last_name" placeholder="Last Name" value="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Business Name</label>
+                                                                <input type="text" class="form-control form-control-solid form-control-lg" name="business_name" placeholder="Business Name" value="" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Business Website</label>
+                                                                <input type="url" class="form-control form-control-solid form-control-lg" name="business_website" placeholder="Business Website" value="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xl-12">
+                                                            <div class="form-group">
+                                                                <label>Business Description</label>
+                                                                <textarea class="form-control form-control-solid form-control-lg" id="kt_maxlength_5" maxlength="150" placeholder="Business Description" rows="3"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-xl-12">
+                                                            <div class="form-group">
+                                                                <label>Email Address</label>
+                                                                <input type="email" class="form-control form-control-solid form-control-lg" name="email_address" placeholder="Email Address" value="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- ===============================================-->
+                                                <!--    Step 2 Ends Here -->
+                                                <!-- ===============================================-->
+
+                                                <!-- ===============================================-->
+                                                <!--    Step 3 Starts Here -->
+                                                <!-- ===============================================-->
+
+                                                <div class="pb-5" data-wizard-type="step-content">
+                                                    <h4 class="mb-10 font-weight-bold text-dark">
+                                                        Business Details
+                                                    </h4>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Problem Discovered</label>
+                                                                <select name="problem_discovered" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Problem Discovered" disabled>
+                                                                            Problem Discovered
+                                                                        </option>
+                                                                        <option value="Agriculture">Agriculture</option>
+                                                                        <option value="Automotive">Automotive</option>
+                                                                        <option value="Education">Education</option>
+                                                                        <option value="Finance">Finance</option>
+                                                                        <option value="Hardware">Hardware</option>
+                                                                        <option value="Healthcare">Healthcare</option>
+                                                                        <option value="Hospitality">Hospitality</option>
+                                                                        <option value="Retail">Retail</option>
+                                                                        <option value="Software">Software</option>
+                                                                        <option value="Other">Other</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Solution Proposed</label>
+                                                                <select name="solution_proposed" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Solution Proposed" disabled>
+                                                                            Solution Proposed
+                                                                        </option>
+                                                                        <option value="5G">5G</option>
+                                                                        <option value="AI">AI</option>
+                                                                        <option value="AR/VR">AR/VR</option>
+                                                                        <option value="Biometrics">Biometrics</option>
+                                                                        <option value="Blockchain">Blockchain</option>
+                                                                        <option value="Cloud">Cloud</option>
+                                                                        <option value="DevOps">DevOps</option>
+                                                                        <option value="Drone">Drone</option>
+                                                                        <option value="Quantum">Quantum</option>
+                                                                        <option value="Robotics">Robotics</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Founder Count</label>
+                                                                <select name="founder_count" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Founder Count" disabled>
+                                                                            Founder Count
+                                                                        </option>
+                                                                        <option value="~2">~2</option>
+                                                                        <option value="~4">~4</option>
+                                                                        <option value="~6">~6</option>
+                                                                        <option value="~8">~8</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Founder Backgroud</label>
+                                                                <select name="founder_background" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Founder Background" disabled>
+                                                                            Founder Background
+                                                                        </option>
+                                                                        <option value="Agriculture">Agriculture</option>
+                                                                        <option value="Automotive">Automotive</option>
+                                                                        <option value="Education">Education</option>
+                                                                        <option value="Finance">Finance</option>
+                                                                        <option value="Hardware">Hardware</option>
+                                                                        <option value="Healthcare">Healthcare</option>
+                                                                        <option value="Hospitality">Hospitality</option>
+                                                                        <option value="Retail">Retail</option>
+                                                                        <option value="Software">Software</option>
+                                                                        <option value="Other">Other</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Competitive Advantage</label>
+                                                                <select name="competitive_advantage" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Competitive Advantage" disabled>
+                                                                            Competitive Advantage
+                                                                        </option>
+                                                                        <option value="Cheaper & Easier">Cheaper & Easier</option>
+                                                                        <option value="Cheaper & Faster">Cheaper & Faster</option>
+                                                                        <option value="Cheaper & Safer">Cheaper & Safer</option>
+                                                                        <option value="Easier & Faster">Easier & Faster</option>
+                                                                        <option value="Easier & Safer">Easier & Safer</option>
+                                                                        <option value="Safer & Faster">Safer & Faster</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Technology Stack</label>
+                                                                <select name="technology_stack" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Technology Stack" disabled>
+                                                                            Technology Stack
+                                                                        </option>
+                                                                        <option value="5G">5G</option>
+                                                                        <option value="AI">AI</option>
+                                                                        <option value="AR/VR">AR/VR</option>
+                                                                        <option value="Biometrics">Biometrics</option>
+                                                                        <option value="Blockchain">Blockchain</option>
+                                                                        <option value="Cloud">Cloud</option>
+                                                                        <option value="DevOps">DevOps</option>
+                                                                        <option value="Drone">Drone</option>
+                                                                        <option value="Quantum">Quantum</option>
+                                                                        <option value="Robotics">Robotics</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Current Stage</label>
+                                                                <select name="current_stage" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Current Stage" disabled>Current Stage</option>
+                                                                        <option value="Bootstrap">Bootstrap</option>
+                                                                        <option value="Pre Seed">Pre Seed</option>
+                                                                        <option value="Seed">Seed</option>
+                                                                        <option value="Post Seed">Post Seed</option>
+                                                                        <option value="Series A">Series A</option>
+                                                                        <option value="Series B">Series B</option>
+                                                                        <option value="Series C">Series C</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Investor Return</label>
+                                                                <select name="investor_return" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Investor Return" disabled>
+                                                                            Investor Return
+                                                                        </option>
+                                                                        <option value="~10%">~10%</option>
+                                                                        <option value="~13%">~13%</option>
+                                                                        <option value="~15%">~15%</option>
+                                                                        <option value="~17%">~17%</option>
+                                                                        <option value="~19%">~19%</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Incorporated Country</label>
+                                                                <select name="incorporated_country" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Incorporated Country" disabled>
+                                                                            Incorporated Country
+                                                                        </option>
+                                                                        <option value="Canada">Canada</option>
+                                                                        <option value="United States">United States</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Incorporated State</label>
+                                                                <select name="incorporated_state" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Incorporated State" disabled>Incorporated State</option>
+                                                                        <optgroup label="Canada">
+                                                                        <option value="Alberta">Alberta</option>
+                                                                        <option value="British Columbia">British Columbia</option>
+                                                                        <option value="Manitoba">Manitoba</option>
+                                                                        <option value="New Brunswick">New Brunswick</option>
+                                                                        <option value="Newfoundland and Labrador">Newfoundland and Labrador</option>
+                                                                        <option value="Nova Scotia">Nova Scotia</option>
+                                                                        <option value="Northwest Territories">Northwest Territories</option>
+                                                                        <option value="Nunavut">Nunavut</option>
+                                                                        <option value="Ontario">Ontario</option>
+                                                                        <option value="Prince Edward Island">Prince Edward Island</option>
+                                                                        <option value="Quebec">Quebec</option>
+                                                                        <option value="Saskatchewan">Saskatchewan</option>
+                                                                        <option value="Yukon">Yukon</option>
+                                                                        </optgroup>
+                                                                        <optgroup label="United States">
+                                                                        <option value="Alabama">Alabama</option>
+                                                                        <option value="Alaska">Alaska</option>
+                                                                        <option value="Arizona">Arizona</option>
+                                                                        <option value="Arkansas">Arkansas</option>
+                                                                        <option value="California">California</option>
+                                                                        <option value="Colorado">Colorado</option>
+                                                                        <option value="Connecticut">Connecticut</option>
+                                                                        <option value="Delaware">Delaware</option>
+                                                                        <option value="District Of Columbia">District Of Columbia</option>
+                                                                        <option value="Florida">Florida</option>
+                                                                        <option value="Georgia">Georgia</option>
+                                                                        <option value="Hawaii">Hawaii</option>
+                                                                        <option value="Idaho">Idaho</option>
+                                                                        <option value="Illinois">Illinois</option>
+                                                                        <option value="Indiana">Indiana</option>
+                                                                        <option value="Iowa">Iowa</option>
+                                                                        <option value="Kansas">Kansas</option>
+                                                                        <option value="Kentucky">Kentucky</option>
+                                                                        <option value="Louisiana">Louisiana</option>
+                                                                        <option value="Maine">Maine</option>
+                                                                        <option value="Maryland">Maryland</option>
+                                                                        <option value="Massachusetts">Massachusetts</option>
+                                                                        <option value="Michigan">Michigan</option>
+                                                                        <option value="Minnesota">Minnesota</option>
+                                                                        <option value="Mississippi">Mississippi</option>
+                                                                        <option value="Missouri">Missouri</option>
+                                                                        <option value="Montana">Montana</option>
+                                                                        <option value="Nebraska">Nebraska</option>
+                                                                        <option value="Nevada">Nevada</option>
+                                                                        <option value="New Hampshire">New Hampshire</option>
+                                                                        <option value="New Jersey">New Jersey</option>
+                                                                        <option value="New Mexico">New Mexico</option>
+                                                                        <option value="New York">New York</option>
+                                                                        <option value="North Carolina">North Carolina</option>
+                                                                        <option value="North Dakota">North Dakota</option>
+                                                                        <option value="Ohio">Ohio</option>
+                                                                        <option value="Oklahoma">Oklahoma</option>
+                                                                        <option value="Oregon">Oregon</option>
+                                                                        <option value="Pennsylvania">Pennsylvania</option>
+                                                                        <option value="Rhode Island">Rhode Island</option>
+                                                                        <option value="South Carolina">South Carolina</option>
+                                                                        <option value="South Dakota">South Dakota</option>
+                                                                        <option value="Tennessee">Tennessee</option>
+                                                                        <option value="Texas">Texas</option>
+                                                                        <option value="Utah">Utah</option>
+                                                                        <option value="Vermont">Vermont</option>
+                                                                        <option value="Virginia">Virginia</option>
+                                                                        <option value="Washington">Washington</option>
+                                                                        <option value="West Virginia">West Virginia</option>
+                                                                        <option value="Wisconsin">Wisconsin</option>
+                                                                        <option value="Wyoming">Wyoming</option>
+                                                                        </optgroup>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- ===============================================-->
+                                                <!--    Step 3 Ends Here -->
+                                                <!-- ===============================================-->
+
+                                                <!-- ===============================================-->
+                                                <!--    Step 4 Starts Here -->
+                                                <!-- ===============================================-->
+
+                                                <div class="pb-5" data-wizard-type="step-content">
+                                                    <h4 class="mb-10 font-weight-bold text-dark">
+                                                        Market Overview
+                                                    </h4>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Adoption Strategy</label>
+                                                                <select name="adoption_strategy" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Adoption Strategy" disabled>
+                                                                            Adoption Strategy
+                                                                        </option>
+                                                                        <option value="Affiliate Marketing">Affiliate Marketing</option>
+                                                                        <option value="Channel Partnerships">Channel Partnerships</option>
+                                                                        <option value="Content Marketing">Content Marketing</option>
+                                                                        <option value="Display Advertising">Display Advertising</option>
+                                                                        <option value="Email Marketing">Email Marketing</option>
+                                                                        <option value="Network Effects">Network Effects</option>
+                                                                        <option value="Referral Marketing">Referral Marketing</option>
+                                                                        <option value="Reseller Programs">Reseller Programs</option>
+                                                                        <option value="Search Advertising">Search Advertising</option>
+                                                                        <option value="Social Media Marketing">Social Media Marketing</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Exit Strategy</label>
+                                                                <select name="exit_strategy" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Exit Strategy" disabled>
+                                                                            Exit Strategy
+                                                                        </option>
+                                                                        <option value="IPO">IPO</option>
+                                                                        <option value="Merger">Merger</option>
+                                                                        <option value="Acquisition">Acquisition</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Target Market</label>
+                                                                <select name="target_market" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Target Market" disabled>Target Market</option>
+                                                                        <option value="B2B">B2B</option>
+                                                                        <option value="B2C">B2C</option>
+                                                                        <option value="B2G">B2G</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Current Customers</label>
+                                                                <select name="current_customers" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Current Customers" disabled>Current Customers</option>
+                                                                        <option value="~000">~000</option>
+                                                                        <option value="~200">~200</option>
+                                                                        <option value="~400">~400</option>
+                                                                        <option value="~600">~600</option>
+                                                                        <option value="~800">~800</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Retention Rate</label>
+                                                                <select name="retention_rate" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Retention Rate" disabled>Retention Rate</option>
+                                                                        <option value="~00%">~00%</option>
+                                                                        <option value="~20%">~20%</option>
+                                                                        <option value="~40%">~40%</option>
+                                                                        <option value="~60%">~60%</option>
+                                                                        <option value="~80%">~80%</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Conversion Rate</label>
+                                                                <select name="conversion_rate" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Conversion Rate" disabled>Conversion Rate</option>
+                                                                        <option value="~00%">~00%</option>
+                                                                        <option value="~10%">~10%</option>
+                                                                        <option value="~13%">~13%</option>
+                                                                        <option value="~16%">~16%</option>
+                                                                        <option value="~19%">~19%</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Product Availability</label>
+                                                                <select name="product_availability" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Product Availability" disabled>
+                                                                            Product Availability
+                                                                        </option>
+                                                                        <option value="Countywide">Countywide</option>
+                                                                        <option value="Citywide">Citywide</option>
+                                                                        <option value="Statewide">Statewide</option>
+                                                                        <option value="Nationwide">Nationwide</option>
+                                                                        <option value="Worldwide">Worldwide</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Business Industry</label>
+                                                                <select name="business_industry" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Business Industry" disabled>
+                                                                            Business Industry
+                                                                        </option>
+                                                                        <option value="Agriculture">Agriculture</option>
+                                                                        <option value="Automotive">Automotive</option>
+                                                                        <option value="Education">Education</option>
+                                                                        <option value="Finance">Finance</option>
+                                                                        <option value="Hardware">Hardware</option>
+                                                                        <option value="Healthcare">Healthcare</option>
+                                                                        <option value="Hospitality">Hospitality</option>
+                                                                        <option value="Retail">Retail</option>
+                                                                        <option value="Software">Software</option>
+                                                                        <option value="Other">Other</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>NorthStar Metric</label>
+                                                                <select name="northstar_metric" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="" disabled>
+                                                                            NorthStar Metric
+                                                                        </option>
+                                                                        <option value="Daily Messages">Daily Messages</option>
+                                                                        <option value="Daily Purchases">Daily Purchases</option>
+                                                                        <option value="Daily Users">Daily Users</option>
+                                                                        <option value="Monthly Messages">Monthly Messages</option>
+                                                                        <option value="Monthly Purchases">Monthly Purchases</option>
+                                                                        <option value="Monthly Users">Monthly Users</option>
+                                                                        <option value="Weekly Messages">Weekly Messages</option>
+                                                                        <option value="Weekly Purchases">Weekly Purchases</option>
+                                                                        <option value="Weekly Users">Weekly Users</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Estimated TAM</label>
+                                                                <select name="estimated_tam" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Estimated TAM" disabled>
+                                                                            Estimated TAM
+                                                                        </option>
+                                                                        <option value="~$000M">~$000M</option>
+                                                                        <option value="~$200M">~$200M</option>
+                                                                        <option value="~$400M">~$400M</option>
+                                                                        <option value="~$600M">~$600M</option>
+                                                                        <option value="~$800M">~$800M</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- ===============================================-->
+                                                <!--    Step 4 Ends Here -->
+                                                <!-- ===============================================-->
+
+                                                <!-- ===============================================-->
+                                                <!--    Step 5 Starts Here -->
+                                                <!-- ===============================================-->
+
+                                                <div class="pb-5" data-wizard-type="step-content">
+                                                    <h4 class="mb-10 font-weight-bold text-dark">
+                                                        Financial Insights
+                                                    </h4>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Monthly Revenue</label>
+                                                                <select name="monthly_revenue" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Monthly Revenue" disabled>Monthly Revenue
+                                                                        </option>
+                                                                        <option value="~$00K">~$00K</option>
+                                                                        <option value="~$20K">~$20K</option>
+                                                                        <option value="~$40K">~$40K</option>
+                                                                        <option value="~$60K">~$60K</option>
+                                                                        <option value="~$80K">~$80K</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Current ARPU</label>
+                                                                <select name="current_arpu" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Current ARPU" disabled>Current ARPU</option>
+                                                                        <option value="~$00">~$00</option>
+                                                                        <option value="~$20">~$20</option>
+                                                                        <option value="~$40">~$40</option>
+                                                                        <option value="~$60">~$60</option>
+                                                                        <option value="~$80">~$80</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Customer LTV</label>
+                                                                <select name="customer_ltv" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Customer LTV" disabled>
+                                                                            Customer LTV
+                                                                        </option>
+                                                                        <option value="~$000">~$000</option>
+                                                                        <option value="~$200">~$200</option>
+                                                                        <option value="~$400">~$400</option>
+                                                                        <option value="~$600">~$600</option>
+                                                                        <option value="~$800">~$800</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Current CAC</label>
+                                                                <select name="current_cac" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Current CAC" disabled>
+                                                                            Current CAC
+                                                                        </option>
+                                                                        <option value="~$05">~$05</option>
+                                                                        <option value="~$20">~$20</option>
+                                                                        <option value="~$40">~$40</option>
+                                                                        <option value="~$60">~$60</option>
+                                                                        <option value="~$80">~$80</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Gross Margin</label>
+                                                                <select name="gross_margin" class="form-control form-control-solid form-control-lg">
+                                                                    <option value="Gross Margin" disabled>
+                                                                        Gross Margin
+                                                                    </option>
+                                                                    <option value="~00%">~00%</option>
+                                                                    <option value="~20%">~20%</option>
+                                                                    <option value="~40%">~40%</option>
+                                                                    <option value="~60%">~60%</option>
+                                                                    <option value="~80%">~80%</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Magic Number</label>
+                                                                <select name="magic_number" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Magic Number" disabled>Magic Number</option>
+                                                                        <option value="~0.5x">~0.5x</option>
+                                                                        <option value="~2.0x">~2.0x</option>
+                                                                        <option value="~4.0x">~4.0x</option>
+                                                                        <option value="~6.0x">~6.0x</option>
+                                                                        <option value="~8.0x">~8.0x</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Current Valuation</label>
+                                                                <select name="current_valuation" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Current Valuation" disabled>
+                                                                            Current Valuation
+                                                                        </option>
+                                                                        <option value="~$0M">~$0M</option>
+                                                                        <option value="~$2M">~$2M</option>
+                                                                        <option value="~$4M">~$4M</option>
+                                                                        <option value="~$6M">~$6M</option>
+                                                                        <option value="~$8M">~$8M</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Core Proceed</label>
+                                                                <select name="core_proceed" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Core Proceed" disabled>
+                                                                            Core Proceed
+                                                                        </option>
+                                                                        <option value="R&D">R&D</option>
+                                                                        <option value="Hiring">Hiring</option>
+                                                                        <option value="Adoption">Adoption</option>
+                                                                        <option value="Operations">Operations</option>
+                                                                        <option value="Acquisition">Acquisition</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Raised Round</label>
+                                                                <select name="raised_round" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Raised Round" disabled>Raised Round</option>
+                                                                        <option value="~$00K">~$00K</option>
+                                                                        <option value="~$20K">~$20K</option>
+                                                                        <option value="~$40K">~$40K</option>
+                                                                        <option value="~$60K">~$60K</option>
+                                                                        <option value="~$80K">~$80K</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="form-group">
+                                                                <label>Current Round</label>
+                                                                <select name="current_round" class="form-control form-control-solid form-control-lg">
+                                                                        <option value="Current Round" disabled>Current Round</option>
+                                                                        <option value="~$000K">~$000K</option>
+                                                                        <option value="~$200K">~$200K</option>
+                                                                        <option value="~$400K">~$400K</option>
+                                                                        <option value="~$600K">~$600K</option>
+                                                                        <option value="~$800K">~$800K</option>
+                                                                    </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+
+                                                <!-- ===============================================-->
+                                                <!--    Step 5 Ends Here -->
+                                                <!-- ===============================================-->
+
+                                                <!-- ===============================================-->
+                                                <!--    Button Actions Start Here -->
+                                                <!-- ===============================================-->
+
+                                                <div class="d-flex justify-content-between border-top mt-5 pt-10">
+                                                    <div class="mr-2">
+                                                        <button type="button" id="prev-step" class="btn btn-light-primary font-weight-bolder px-10 py-4" data-wizard-type="action-prev">
+                                                                <span class="svg-icon svg-icon-md mr-3">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                        width="24px" height="24px" viewBox="0 0 24 24"
+                                                                        version="1.1">
+                                                                        <g stroke="none" stroke-width="1" fill="none"
+                                                                            fill-rule="evenodd">
+                                                                            <polygon points="0 0 24 0 24 24 0 24" />
+                                                                            <rect fill="#000000" opacity="0.3"
+                                                                                transform="translate(12.000000, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-12.000000, -12.000000)"
+                                                                                x="11" y="5" width="2" height="14"
+                                                                                rx="1" />
+                                                                            <path
+                                                                                d="M3.7071045,15.7071045 C3.3165802,16.0976288 2.68341522,16.0976288 2.29289093,15.7071045 C1.90236664,15.3165802 1.90236664,14.6834152 2.29289093,14.2928909 L8.29289093,8.29289093 C8.67146987,7.914312 9.28105631,7.90106637 9.67572234,8.26284357 L15.6757223,13.7628436 C16.0828413,14.136036 16.1103443,14.7686034 15.7371519,15.1757223 C15.3639594,15.5828413 14.7313921,15.6103443 14.3242731,15.2371519 L9.03007346,10.3841355 L3.7071045,15.7071045 Z"
+                                                                                fill="#000000" fill-rule="nonzero"
+                                                                                transform="translate(9.000001, 11.999997) scale(-1, -1) rotate(90.000000) translate(-9.000001, -11.999997)" />
+                                                                        </g>
+                                                                    </svg>
+                                                                </span>Back
+                                                            </button>
+                                                    </div>
+                                                    <div>
+                                                        <button type="button" class="btn btn-primary font-weight-bolder px-10 py-4" data-wizard-type="action-submit">
+                                                                Done
+                                                                <span class="svg-icon svg-icon-md ml-3">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                        width="24px" height="24px" viewBox="0 0 24 24"
+                                                                        version="1.1">
+                                                                        <g stroke="none" stroke-width="1" fill="none"
+                                                                            fill-rule="evenodd">
+                                                                            <polygon points="0 0 24 0 24 24 0 24" />
+                                                                            <path
+                                                                                d="M6.26193932,17.6476484 C5.90425297,18.0684559 5.27315905,18.1196257 4.85235158,17.7619393 C4.43154411,17.404253 4.38037434,16.773159 4.73806068,16.3523516 L13.2380607,6.35235158 C13.6013618,5.92493855 14.2451015,5.87991302 14.6643638,6.25259068 L19.1643638,10.2525907 C19.5771466,10.6195087 19.6143273,11.2515811 19.2474093,11.6643638 C18.8804913,12.0771466 18.2484189,12.1143273 17.8356362,11.7474093 L14.0997854,8.42665306 L6.26193932,17.6476484 Z"
+                                                                                fill="#000000" fill-rule="nonzero"
+                                                                                transform="translate(11.999995, 12.000002) rotate(-180.000000) translate(-11.999995, -12.000002)" />
+                                                                        </g>
+                                                                    </svg>
+                                                                </span>
+                                                            </button>
+                                                        <button type="button" id="next-step" class="btn btn-primary font-weight-bolder px-10 py-4" data-wizard-type="action-next">
+                                                                Next
+                                                                <span class="svg-icon svg-icon-md ml-3">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                                        width="24px" height="24px" viewBox="0 0 24 24"
+                                                                        version="1.1">
+                                                                        <g stroke="none" stroke-width="1" fill="none"
+                                                                            fill-rule="evenodd">
+                                                                            <polygon points="0 0 24 0 24 24 0 24" />
+                                                                            <rect fill="#000000" opacity="0.3"
+                                                                                transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000)"
+                                                                                x="11" y="5" width="2" height="14"
+                                                                                rx="1" />
+                                                                            <path
+                                                                                d="M9.70710318,15.7071045 C9.31657888,16.0976288 8.68341391,16.0976288 8.29288961,15.7071045 C7.90236532,15.3165802 7.90236532,14.6834152 8.29288961,14.2928909 L14.2928896,8.29289093 C14.6714686,7.914312 15.281055,7.90106637 15.675721,8.26284357 L21.675721,13.7628436 C22.08284,14.136036 22.1103429,14.7686034 21.7371505,15.1757223 C21.3639581,15.5828413 20.7313908,15.6103443 20.3242718,15.2371519 L15.0300721,10.3841355 L9.70710318,15.7071045 Z"
+                                                                                fill="#000000" fill-rule="nonzero"
+                                                                                transform="translate(14.999999, 11.999997) scale(1, -1) rotate(90.000000) translate(-14.999999, -11.999997)" />
+                                                                        </g>
+                                                                    </svg>
+                                                                </span>
+                                                            </button>
+                                                    </div>
+                                                </div>
+
+                                                <!-- ===============================================-->
+                                                <!--    Button Actions End Here -->
+                                                <!-- ===============================================-->
+
+                                            </form>
+
+                                            <!-- ===============================================-->
+                                            <!--    Form Ends Here -->
+                                            <!-- ===============================================-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===============================================-->
+            <!--    Content Ends Here -->
+            <!-- ===============================================-->
+
+            <!-- ===============================================-->
+            <!--    Footer Starts Here -->
+            <!-- ===============================================-->
+
+
+
+            <!-- ===============================================-->
+            <!--    Footer Ends Here -->
+            <!-- ===============================================-->
+        </div>
+    </div>
+
+    <!-- ===============================================-->
+    <!--    Script Starts Here -->
+    <!-- ===============================================-->
+
+    {% include 'main/templates/script.html' %}
+
+    <!-- ===============================================-->
+    <!--    Script Ends Here -->
+    <!-- ===============================================-->
+</body>
+
+<!-- ===============================================-->
+<!--    Body Ends Here -->
+<!-- ===============================================-->
+
+</html>

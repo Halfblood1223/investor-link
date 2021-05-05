@@ -1,4 +1,4 @@
- {% load static %}
+{% load static %}
 
 <!DOCTYPE html>
 
@@ -8,8 +8,8 @@
 <!--    Header Starts Here -->
 <!-- ===============================================-->
 
-<title>{% block title %} Account | Vancouvar {% endblock %}</title>
-<title>{% block description %} You can create, update, access, and reset an account from here. {% endblock %}</title>
+<title>{% block title %} Access Your Account | Vancouvar {% endblock %}</title>
+<title>{% block description %} You can access your account from here. {% endblock %}</title>
 
 {% include 'main/templates/header.html' %}
 
@@ -22,160 +22,79 @@
 <!-- ===============================================-->
 
 <body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled page-loading">
-
-    <!-- ===============================================-->
-    <!--    Content Starts Here -->
-    <!-- ===============================================-->
-
     <div class="d-flex flex-column flex-root">
         <div class="login login-1 login-signin-on d-flex flex-column flex-lg-row flex-column-fluid bg-white" id="kt_login">
             <div class="login-content flex-row-fluid d-flex flex-column justify-content-center position-relative overflow-hidden p-7 mx-auto">
+
+                <!-- ===============================================-->
+                <!--    Content Starts Here -->
+                <!-- ===============================================-->
+
                 <div class="d-flex flex-column-fluid flex-center">
 
                     <!-- ===============================================-->
-                    <!--    Sign-In Starts Here -->
+                    <!--    Form Starts Here -->
                     <!-- ===============================================-->
 
                     <div class="login-form login-signin">
-                        <form class="form" novalidate="novalidate" id="kt_login_signin_form">
+                        <form class="form" novalidate="novalidate" id="" method="POST">
+                            {% csrf_token %}
                             <div class="pb-8 pt-lg-0 pt-0">
-                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Access an Account
+                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">
+                                    Access Your Account
                                 </h3>
-                                <span class="text-muted font-weight-bold font-size-h6">- it only takes a few seconds -
-                                </span>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control form-control-solid h-auto p-6 rounded-lg font-size-h6" type="email" placeholder="Email Address" name="email" autocomplete="on" />
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control form-control-solid h-auto p-6 rounded-lg font-size-h6" type="password" placeholder="Enter password" name="password" autocomplete="on" />
-                            </div>
-                            <div class="pb-lg-0 pb-5">
-                                <button type="button" id="kt_login_signin_submit" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3 btn-block">Sign-
-                                    In</button>
-                            </div>
-                            <div class="pt-5">
-                                <span class="text-muted font-weight-bold font-size-h6">- quickly
-                                    <a href="javascript:;" id="kt_login_signup" class="text-primary font-weight-bolder">
-                                        create</a> or <a href="javascript:;" id="kt_login_forgot"
-                                        class="text-primary font-weight-bolder">reset</a> account -</span>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- ===============================================-->
-                    <!--    Sign-In Ends Here -->
-                    <!-- ===============================================-->
-
-                    <!-- ===============================================-->
-                    <!--    Sign-Up Starts Here -->
-                    <!-- ===============================================-->
-
-                    <div class="login-form login-signup">
-                        <form class="form" novalidate="novalidate" id="kt_login_signup_form">
-                            <div class="pb-8 pt-lg-0 pt-0">
-                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Create an Account
-                                </h3>
-                                <span class="text-muted font-weight-bold font-size-h6">- it only takes a few seconds -
-                                </span>
+                                <span class="text-muted font-weight-bold font-size-h6">It only takes a few seconds.
+                  </span>
                             </div>
                             <div class="row">
-                                <div class="col-xl-6">
+                                <div class="col-xl-12">
                                     <div class="form-group">
-                                        <input class="form-control form-control-solid h-auto p-6 rounded-lg font-size-h6" type="text" placeholder="First Name" name="firstname" autocomplete="off" />
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="form-group">
-                                        <input class="form-control form-control-solid h-auto p-6 rounded-lg font-size-h6" type="text" placeholder="Last Name" name="lastname" autocomplete="off" />
+                                        <input class="form-control form-control-solid h-auto p-6 rounded-lg font-size-h6" type="email" placeholder="Email Address" name="email" autocomplete="on" />
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="form-group">
-                                        <input class="form-control form-control-solid h-auto p-6 rounded-lg font-size-h6" type="email" placeholder="Email Address" name="email" autocomplete="off" />
+                                        <input class="form-control form-control-solid h-auto p-6 rounded-lg font-size-h6" type="password" placeholder="Enter password" name="cpassword" autocomplete="on" />
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-xl-6">
-                                    <div class="form-group">
-                                        <input class="form-control form-control-solid h-auto p-6 rounded-lg font-size-h6" type="password" placeholder="Create Password" name="password" autocomplete="off" />
-                                    </div>
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="form-group">
-                                        <input class="form-control form-control-solid h-auto p-6 rounded-lg font-size-h6" type="password" placeholder="Confirm password" name="cpassword" autocomplete="off" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group d-flex flex-wrap pb-lg-0 pb-3">
-                                <button type="button" id="kt_login_signup_submit" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-4">Submit</button>
-                                <button type="button" id="kt_login_signup_cancel" class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3">Cancel</button>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- ===============================================-->
-                    <!--    Sign-Up Ends Here -->
-                    <!-- ===============================================-->
-
-                    <!-- ===============================================-->
-                    <!--    Password Reset Starts Here -->
-                    <!-- ===============================================-->
-
-                    <div class="login-form login-forgot">
-                        <form class="form" novalidate="novalidate" id="kt_login_forgot_form">
-                            <div class="pb-8 pt-lg-0 pt-0">
-                                <h3 class="font-weight-bolder text-dark font-size-h4 font-size-h1-lg">Reset an Account
-                                </h3>
-                                <span class="text-muted font-weight-bold font-size-h6">- it only takes a few seconds -
-                                </span>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control form-control-solid h-auto p-6 rounded-lg font-size-h6" type="email" placeholder="Email Address" name="email" autocomplete="off" />
-                            </div>
-                            <div class="pb-lg-0 pt-0">
-                                <button type="button" id="kt_login_forgot_submit" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-4">Submit</button>
-                                <button type="button" id="kt_login_forgot_cancel" class="btn btn-light-primary font-weight-bolder font-size-h6 px-8 py-4 my-3">Cancel</button>
+                            <div class="pb-lg-0 pb-5">
+                                <button type="submit" id="" class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 mr-3 btn-block">
+                    Sign-In
+                  </button>
                             </div>
                             <div class="pt-5">
-                                <span class="text-muted font-weight-bold font-size-h6">- quickly
-                                    create or access account -</span>
-                            </div>
-                        </form>
-                    </div>
-
-                    <!-- ===============================================-->
-                    <!--    Password Reset Ends Here -->
-                    <!-- ===============================================-->
-
+                                <span class="text-muted font-weight-bold font-size-h6">You can <a href="{% url 'account_create' %}">create an account</a> or <a href="{% url 'password_reset' %}">reset your account</a>.
                 </div>
+              </form>
             </div>
+
+            <!-- ===============================================-->
+            <!--    Form Ends Here -->
+            <!-- ===============================================-->
+          </div>
+
+          <!-- ===============================================-->
+          <!--    Content Ends Here -->
+          <!-- ===============================================-->
+
+          <!-- ===============================================-->
+          <!--    Script Starts Here -->
+          <!-- ===============================================-->
+
+          {% include 'main/templates/script.html' %}
+
+          <!-- ===============================================-->
+          <!--    Script Ends Here -->
+          <!-- ===============================================-->
         </div>
+      </div>
     </div>
+  </body>
 
-    <!-- ===============================================-->
-    <!--    Content Ends Here -->
-    <!-- ===============================================-->
-
-    <!-- ===============================================-->
-    <!--    Script Starts Here -->
-    <!-- ===============================================-->
-
-    {% include 'main/templates/script.html' %}
-
-    <!-- ===============================================-->
-    <!--    Script Ends Here -->
-    <!-- ===============================================-->
-    </div>
-    </div>
-    </div>
-</body>
-
-<!-- ===============================================-->
-<!--    Body Ends Here -->
-<!-- ===============================================-->
-
+  <!-- ===============================================-->
+  <!--    Body Ends Here -->
+  <!-- ===============================================-->
 </html>

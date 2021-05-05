@@ -14,38 +14,38 @@
     <div class="container flex-wrap flex-sm-nowrap">
         <div class="d-none d-lg-flex align-items-center flex-wrap w-250px">
             <a href="/">
-                <img id="brand" alt="Logo" src="{% static '/logos/white-primary-filled.png' %}" class="max-h-40px" />
+                <img id="brand" alt="Logo" src="{% static '/logos/primary-letter.png' %}" class="max-h-40px" />
             </a>
         </div>
         <div class="subheader-nav nav flex-grow-1">
             <div class="nav-item">
                 <span class="nav-label px-10">
-            <span class="nav-title text-dark-75 font-weight-bold font-size-h1">0</span>
-                <span class="nav-desc text-muted">Deals</span>
+            <span class="nav-title text-dark-75 font-weight-bold font-size-h1">{{ user.all_time_emails_sent }}</span>
+                <span class="nav-desc text-muted">MESSAGES</span>
                 </span>
             </div>
             <div class="nav-item">
                 <span class="nav-label px-10">
-            <span class="nav-title text-dark-75 font-weight-bold font-size-h1">>$0</span>
-                <span class="nav-desc text-muted">~ MRR</span>
+            <span class="nav-title text-dark-75 font-weight-bold font-size-h1">{{ user.daily_emails_sent }}</span>
+                <span class="nav-desc text-muted">TODAY</span>
                 </span>
             </div>
             <div class="nav-item">
                 <span class="nav-label px-10">
-            <span class="nav-title text-dark-75 font-weight-bold font-size-h1">>$0</span>
-                <span class="nav-desc text-muted">~ Valuation</span>
+            <span class="nav-title text-dark-75 font-weight-bold font-size-h1">{{ user.weekly_emails_sent }}</span>
+                <span class="nav-desc text-muted">THIS WEEK</span>
                 </span>
             </div>
             <div class="nav-item">
                 <span class="nav-label px-10">
-            <span class="nav-title text-dark-75 font-weight-bold font-size-h1">>$0</span>
-                <span class="nav-desc text-muted">~ Raised</span>
+            <span class="nav-title text-dark-75 font-weight-bold font-size-h1">{{ user.monthly_emails_sent }}</span>
+                <span class="nav-desc text-muted">THIS MONTH</span>
                 </span>
             </div>
             <div class="nav-item">
                 <span class="nav-label px-10">
-            <span class="nav-title text-dark-75 font-weight-bold font-size-h1">>$0</span>
-                <span class="nav-desc text-muted">~ Raising</span>
+            <span class="nav-title text-dark-75 font-weight-bold font-size-h1">{{ user.email_balance }}</span>
+                <span class="nav-desc text-muted">BALANCE</span>
                 </span>
             </div>
         </div>

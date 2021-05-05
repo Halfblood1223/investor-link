@@ -5,60 +5,59 @@
 <!-- ===============================================-->
 
 <div class="gutter-b" id="kt_breadcrumbs">
-                        <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
-                            <div class="d-flex align-items-center flex-wrap mr-1">
-                                <div class="d-flex align-items-baseline flex-wrap mr-5">
-                                    <h4 class="text-dark font-weight-bold my-1 mr-5">Plans</h4>
-                                    <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
-                                        <li class="breadcrumb-item">
-                                            <div class="text-dark-50">Plans</div>
-                                        </li>
-                                        <li class="breadcrumb-item">
-                                            <div class="text-muted">Select a Plan
-                                        </li>
-                                    </ul>
-                                    </div>
-                                </div>
-                                <div class="d-flex align-items-center">
-                                    <span class="label label-success label-pill label-inline mr-3">BETA</span>
-                                    <div class="dropdown dropdown-inline" data-toggle="tooltip" title="Quick actions" data-placement="top">
-                                        <a href="{% url 'users_create' %}" class="btn btn-fixed-height btn-bg-white btn-text-dark-50 btn-hover-text-primary btn-icon-primary font-weight-bolder font-size-sm px-5 mr-3" data-toggle="" aria-haspopup="true" aria-expanded="false">
-                                            <span class="svg-icon svg-icon-md">
-                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
-                                                viewBox="0 0 24 24" version="1.1">
-                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                    <polygon points="0 0 24 0 24 24 0 24" />
-                                                    <path
-                                                        d="M18,8 L16,8 C15.4477153,8 15,7.55228475 15,7 C15,6.44771525 15.4477153,6 16,6 L18,6 L18,4 C18,3.44771525 18.4477153,3 19,3 C19.5522847,3 20,3.44771525 20,4 L20,6 L22,6 C22.5522847,6 23,6.44771525 23,7 C23,7.55228475 22.5522847,8 22,8 L20,8 L20,10 C20,10.5522847 19.5522847,11 19,11 C18.4477153,11 18,10.5522847 18,10 L18,8 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z"
-                                                        fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                                    <path
-                                                        d="M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z"
-                                                        fill="#000000" fill-rule="nonzero" />
-                                                </g>
-                                            </svg>
-                                        </span>New Users</a>
-                                    </div>
-                                    <div class="dropdown dropdown-inline" data-toggle="tooltip" title="Quick actions" data-placement="top">
-                                        <a href="{% url 'deals_create' %}" class="btn btn-fixed-height btn-primary font-weight-bolder font-size-sm px-5" data-toggle="" aria-haspopup="true" aria-expanded="false">
-                                            <span class="svg-icon svg-icon-md">
-            <svg
-              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
-              viewBox="0 0 24 24" version="1.1">
-              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <rect x="0" y="0" width="24" height="24" />
-                <rect fill="#000000" opacity="0.3" x="13" y="4" width="3" height="16" rx="1.5" />
-                <rect fill="#000000" x="8" y="9" width="3" height="11" rx="1.5" />
-                <rect fill="#000000" x="18" y="11" width="3" height="9" rx="1.5" />
-                <rect fill="#000000" x="3" y="13" width="3" height="7" rx="1.5" />
-              </g>
-            </svg>
-          </span>New Deals</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <div class="container d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
+        <div class="d-flex align-items-center flex-wrap mr-1">
+            <div class="d-flex align-items-baseline flex-wrap mr-5">
+                <h4 class="text-dark font-weight-bold my-1 mr-5">Hi, Kimberly!</h4>
+                <ul class="breadcrumb breadcrumb-transparent breadcrumb-dot font-weight-bold p-0 my-2 font-size-sm">
+                    <li class="breadcrumb-item">
+                        <div class="text-dark-50">Plans</div>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <div class="text-muted">Select a Plan
+                    </li>
+                </ul>
+                </div>
+            </div>
+            <div class="d-flex align-items-center">
+                <span class="label label-success label-pill label-inline mr-3">BETA</span>
+                <div class="dropdown dropdown-inline" data-toggle="tooltip" title="Quick actions" data-placement="top">
+                    <a href="{% url 'plans' %}" class="btn btn-fixed-height btn-bg-white btn-text-dark-50 btn-hover-text-primary btn-icon-primary font-weight-bolder font-size-sm px-5 mr-3" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                        <span class="svg-icon svg-icon-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <polygon points="0 0 24 0 24 24 0 24" />
+                                <path
+                                    d="M18,8 L16,8 C15.4477153,8 15,7.55228475 15,7 C15,6.44771525 15.4477153,6 16,6 L18,6 L18,4 C18,3.44771525 18.4477153,3 19,3 C19.5522847,3 20,3.44771525 20,4 L20,6 L22,6 C22.5522847,6 23,6.44771525 23,7 C23,7.55228475 22.5522847,8 22,8 L20,8 L20,10 C20,10.5522847 19.5522847,11 19,11 C18.4477153,11 18,10.5522847 18,10 L18,8 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z"
+                                    fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                <path
+                                    d="M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z"
+                                    fill="#000000" fill-rule="nonzero" />
+                            </g>
+                        </svg>
+                    </span>New Users</a>
+                </div>
+                <div class="dropdown dropdown-inline" data-toggle="tooltip" title="Quick actions" data-placement="top">
+                    <a href="{% url 'account_update' %}" class="btn btn-fixed-height btn-primary font-weight-bolder font-size-sm px-5" data-toggle="" aria-haspopup="true" aria-expanded="false">
+                        <span class="svg-icon svg-icon-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                            height="24px" viewBox="0 0 24 24" version="1.1">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24" />
+                                <path
+                                    d="M6,9 L6,15 C6,16.6568542 7.34314575,18 9,18 L15,18 L15,18.8181818 C15,20.2324881 14.2324881,21 12.8181818,21 L5.18181818,21 C3.76751186,21 3,20.2324881 3,18.8181818 L3,11.1818182 C3,9.76751186 3.76751186,9 5.18181818,9 L6,9 Z"
+                                    fill="#000000" fill-rule="nonzero" />
+                                <path
+                                    d="M10.1818182,4 L17.8181818,4 C19.2324881,4 20,4.76751186 20,6.18181818 L20,13.8181818 C20,15.2324881 19.2324881,16 17.8181818,16 L10.1818182,16 C8.76751186,16 8,15.2324881 8,13.8181818 L8,6.18181818 C8,4.76751186 8.76751186,4 10.1818182,4 Z"
+                                    fill="#000000" opacity="0.3" />
+                            </g>
+                        </svg></span>Train Models</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<!-- ===============================================-->
-<!--    Breadcrumbs End Here -->
-<!-- ===============================================-->
+    <!-- ===============================================-->
+    <!--    Breadcrumbs End Here -->
+    <!-- ===============================================-->
