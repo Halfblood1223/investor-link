@@ -1,9 +1,11 @@
-# investor-link
+<h1 align="center">
+    investor-link
+</h1>
 
 ![Image](github-image.png)
 
 ## Description
-This website is designed to match investors with founders based on parameters. 
+This website is designed to match investors with founders based on parameters. It automates the process of finding suitable investment opportunities.
 
 ## Functions
 ### Account System - 
@@ -44,20 +46,27 @@ This website is designed to match investors with founders based on parameters.
 
 ### There are 4 processes in this app.
 
-1st - Front End Django Code
+##### Front End Django Code -
+  This handles loading all of the pages and retrieving user data.
 
-2nd - Redis Server
+##### Redis Server -
+  This is the Celery Broker
 
-3rd - Celery Processes
+##### Celery Processes -
+  This handles the async sending of emails
 
-4th - Stripe Webhook
+##### Stripe Webhook - 
+  This allows delivery of subscription upon certain events
 
-## Commands for Startup
+## Commands for Startup ( ONLY USED ON MY LOCAL HOST )
 
-1st (Starts redis-server) - redis-server
+* (Starts redis-server) - redis-server
 
-2nd (Starts celery beat) - celery -A vancouvar beat -l info
+* (Starts celery beat) - celery -A vancouvar beat -l info
 
-3rd (Starts celery worker) - celery -A vancouvar worker -l info -P solo
+* (Starts celery worker) - celery -A vancouvar worker -l info -P solo
 
-4th (Starts server) - python manage.py runserver
+* (Starts server) - python manage.py runserver
+
+## Notes
+* **This project isn't ready for production.** It was created as part of a freelance gig that was never paid for.
