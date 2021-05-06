@@ -51,7 +51,7 @@ def stripehook(request):
     endpoint_secret = 'whsec_j2Luk6k962uwEVDKp7gz71XMV5QDOnOz'
 
 
-    stripe.api_key = "sk_test_51Imb9WDIUASXHMiseg4asCebe7bE24gd0wrUx3VJgUo8Kt7a5rSFBagTa3mQ9kuSzMTfY3nDdDehg6DH998zml2l00Z3k176z0"
+    stripe.api_key = settings.STRIPE_SECRET_KEY
 
     payload = request.body
     sig_header = request.META['HTTP_STRIPE_SIGNATURE']
