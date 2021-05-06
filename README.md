@@ -1,11 +1,13 @@
-# investor-link
+<h1 align="center">
+    investor-link
+</h1>
 
 ![Image](github-image.png)
 
-## Description
-This website is designed to match investors with founders based on parameters. 
+## :file_folder: Description
+This website is designed to match investors with founders based on parameters. It automates the process of finding suitable investment opportunities.
 
-## Functions
+## :computer: Functions
 ### Account System - 
   Uses the django default user system with additional modifications to carry parameter data.
   #### Pages - 
@@ -40,24 +42,35 @@ This website is designed to match investors with founders based on parameters.
    * Monthly Reset - Resets personal and sitewide monthly email stats. Also resets the monthly email allowance.
 
 
-## Architecture
+## :floppy_disk: Architecture
 
 ### There are 4 processes in this app.
 
-1st - Front End Django Code
+##### Front End Django Code -
+  This handles loading all of the pages and retrieving user data.
 
-2nd - Redis Server
+##### Redis Server -
+  This is the Celery Broker
 
-3rd - Celery Processes
+##### Celery Processes -
+  This handles the async sending of emails
 
-4th - Stripe Webhook
+##### :moneybag: Stripe Webhook - 
+  This allows delivery of subscription upon certain events
 
-## Commands for Startup
+## Commands for Startup ( ONLY USED ON MY LOCAL HOST )
 
-1st (Starts redis-server) - redis-server
+* (Starts redis-server) - `redis-server`
 
-2nd (Starts celery beat) - celery -A vancouvar beat -l info
+* (Starts forwarding Stripe Webhook events to your locally hosted webhook reciever) - `./stripe listen --forward-to http://localhost:8000/plans/stripehook`
 
-3rd (Starts celery worker) - celery -A vancouvar worker -l info -P solo
+* (Starts celery beat) - `celery -A vancouvar beat -l info`
 
-4th (Starts server) - python manage.py runserver
+* (Starts celery worker) - `celery -A vancouvar worker -l info -P solo`
+
+* (Starts server) - python manage.py runserver
+
+## Notes
+* **This project isn't ready for production.** It was created as part of a freelance gig that was never paid for.
+* If you move this over to production you will need to replace the Stripe Webhook Endpoint Key
+* Please attribute me if you use this. Email: yashveersemlan@gmail.com
