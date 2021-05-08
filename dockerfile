@@ -1,4 +1,4 @@
-FROM python:3.8.5
+FROM python:3.8
 
 ENV PATH="/scripts:${PATH}"
 
@@ -6,6 +6,8 @@ ENV PATH="/scripts:${PATH}"
 COPY ./requirements.txt /requirements.txt
 RUN pip install -r /requirements.txt
 
+RUN adduser -D user
+USER user
 RUN mkdir /saas
 COPY ./saas /saas
 WORKDIR /saas
@@ -16,8 +18,7 @@ RUN mkdir -p /vol/web/media
 RUN mkdir -p /vol/web/static
 
 RUN useradd -ms /bin/bash user
-RUN chown -R user:user /vol
+RUN chown user:user -R /vol
 RUN chmod -R 755 /vol/web
-USER user
 
 CMD ["python manage.py collectstatic --noinput", "uwsgi --socket :8000 --master --enable-threads --module app.wsgi"]
