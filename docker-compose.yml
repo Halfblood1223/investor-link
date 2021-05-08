@@ -4,8 +4,6 @@ services:
   app:
     build:
       context: .
-    volumes:
-      - static_data:/vol/web
     environment:
       - SECRET_KEY=thecoolkidskey
       - ALLOWED_HOSTS=127.0.0.1,localhost,40.71.119.30
@@ -13,8 +11,6 @@ services:
   proxy:
     build:
       context: ./nginx
-    volumes:
-      - static_data:/vol/static
     ports:
       - "8080:8080"
     depends_on:

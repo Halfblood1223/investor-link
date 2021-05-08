@@ -11,8 +11,5 @@ COPY ./saas /saas
 WORKDIR /saas
 COPY ./scripts /scripts
 
-#might have to add these lines
-RUN mkdir -p /vol/web/media
-RUN mkdir -p /vol/web/static
 
 CMD ["python manage.py collectstatic --noinput", "uwsgi --socket :8000 --master --enable-threads --module app.wsgi"]
