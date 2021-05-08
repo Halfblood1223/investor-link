@@ -1,12 +1,13 @@
 version: '3.8'
 
 services:
-  app:
-    build:
-      context: .
-    environment:
-      - SECRET_KEY=thecoolkidskey
-      - ALLOWED_HOSTS=127.0.0.1,localhost,40.71.119.30
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
 
   proxy:
     build:
