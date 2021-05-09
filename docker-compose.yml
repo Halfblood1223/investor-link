@@ -3,7 +3,7 @@ version: '3.7'
 services:
   web:
     build: ./app
-    command: gunicorn vancouvar.wsgi:application --bind 0.0.0.0:8000
+    command: uwsgi --socket :8000 --master --enable-threads --module vancouvar.wsgi
     volumes:
       - ./app/:/usr/src/app/
     expose:
