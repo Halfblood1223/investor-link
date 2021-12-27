@@ -73,4 +73,4 @@ This website is designed to match investors with founders based on parameters. I
 ## Notes
 * **This project isn't ready for production.** It was created as part of a freelance gig that was never paid for.
 * If you move this over to production you will need to replace the Stripe Webhook Endpoint Key
-* Please attribute me if you use this. Email: yashveersemlan@gmail.com
+* Please attribute me if you use this. Email: yashvsemlani@gmail.com
